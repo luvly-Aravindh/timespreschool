@@ -1,0 +1,2377 @@
+<!doctype html>
+<html class="no-js" lang="en-IN">
+    <head>
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Times Pre School | Parent Landing Page </title>  
+    <link rel='stylesheet' id='dpsp-frontend-style-pro-css' href='css/style-frontend-pro.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='brb-public-main-css-css' href='css/public-main.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='main-stylesheet-css' href='css/parent.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='plyr-css' href='css/plyr.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="css/design.css">
+         <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <link rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/animate.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js?ver=3.2.1" id="jquery-js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/plyr.polyfilled.js" id="plyr.polyfilled-js"></script>
+    <script type="text/javascript" defer="defer" src="js/public-main.js" id="brb-public-main-js-js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <link rel="icon" href="images/time-logo.jpg" sizes="32x32" />
+    <link rel="icon" href="images/time-logo.jpg" sizes="192x192" />
+    <link rel="apple-touch-icon" href="images/time-logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <!-- video -->
+   <style>
+    /* popup */
+    .parents-popup-form-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.parents-popup-form-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background-color: #9c3; /* Updated background color */
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.parents-popup-form-container .form-group {
+    margin-bottom: 15px;
+}
+
+.parents-popup-form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.parents-popup-form-container input, .parents-popup-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.parents-popup-form-container button {
+    background-color: #46499e; /* Updated background color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto; /* Center-align the button */
+}
+
+/* .parents-popup-form-container button:hover {
+    background-color: #3b3c82;
+} */
+
+.parents-popup-form-container .close-btn {
+    position: absolute;
+    top: -75px;
+    right: -35px;
+    background: none;
+    border: none;
+    font-size: 70px;
+    cursor: pointer;
+}
+
+.parents-popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+  /*  */
+     @font-face {
+      font-family: "Fredoka", sans-serif;    src: url("css/font/Fredoka-Regular.ttf");
+
+} 
+h1{
+  font-family: "Fredoka", sans-serif;    font-weight: bold ;
+}
+h2{
+  font-family: "Fredoka", sans-serif;    font-weight: bold ;
+}
+h3{
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600 ;
+}
+h4{
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600 ;
+}
+h5{
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600 ;
+}
+h6{
+    font-family: "Fredoka", sans-serif;
+    font-weight: 400 ;
+}
+.button.secondary-cta{
+    position: relative;
+    background-color: transparent;
+    color: rgb(0, 91, 175);
+    border: none;
+    text-transform: uppercase !important;
+    padding: 12px 22px;
+    margin-bottom: 15px;
+    border: 2px solid #000;
+    font-size: 16px !important;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+@media screen and (max-width:768px) {
+  .button.secondary-cta {
+    position: relative;
+    background-color: transparent;
+    color: rgb(0, 91, 175);
+    border: none;
+    text-transform: uppercase !important;
+    padding: 12px 22px;
+    width: 122%;
+    margin-bottom: 15px;
+    border: 2px solid #000;
+    font-size: 15px !important;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+}
+/*  */
+.button.secondary-new {
+    position: relative;
+    background-color: #ec1f25;
+    color: white;
+    border: none;
+    text-transform: uppercase !important;
+    padding: 20px 15px;
+    font-size: 16px !important;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+.button.secondary-new::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -45%; /* Start off-screen to the left */
+    width: 45%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+    transition: left 0.6s ease; /* Animate the left property */
+    clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
+}
+
+.button.secondary-new:hover {
+    background-color: #ff4500;
+}
+
+.button.secondary-new:hover::before {
+    left: 100%; /* Move off-screen to the right */
+}
+.button.button-red-new {
+    position: relative;
+    background-color: #10cefd;
+    color: white;
+    border: none;
+    text-transform: uppercase !important;
+    padding: 20px 20px;
+    font-size: 16px !important;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+.button.button-red-new::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -45%; /* Start off-screen to the left */
+    width: 45%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+    transition: left 0.6s ease; /* Animate the left property */
+    clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
+}
+
+.button.button-red-new:hover {
+    background-color: #ff4500;
+}
+
+.button.button-red-new:hover::before {
+    left: 100%; /* Move off-screen to the right */
+}
+/*desktop head  */
+.home-testimonials{
+  padding-bottom: 90px !important;
+}
+.pillars-head{
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 75px; 
+  text-align: center;
+  width: 80%;
+}
+.give-head{
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 75px; 
+  text-align: center;
+  width: 80%;
+  margin-top: 50px;
+}
+.give-paragraph{
+  font-weight: 100;
+  color: #000;
+}
+.prefect-head{
+  font-size: 84px;
+  font-weight: bold;
+  line-height: 75px;
+  text-align: center;
+  color: #fff;
+}
+.prefect-paragraph{
+  font-size: 26px;
+}
+.book-head{
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 75px; 
+  text-align: center;
+  width: 80%;
+}
+.book-paragraph{
+  font-weight: 100;
+  color: #000;
+}
+.what-head{
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 75px; 
+  text-align: center;
+  width: 80%;
+}
+.text-short{
+  font-size: 18px;
+}
+/* mobile head */
+@media (max-width: 768px) {
+    .button.hollow.secondary {
+        margin-left: 85px !important;
+    }
+    .button.secondary {
+        background-color: #ffffff;
+        text-transform: uppercase !important;
+        padding: 20px 50px !important;
+        font-size: 11px !important;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .pillars-head{
+      font-size: 32px;
+      line-height: 35px;
+    }
+    .give-head{
+      font-size: 32px;
+      line-height: 35px;
+    }
+    .give-paragraph{
+      font-weight: 100;
+      color: #000;
+      font-size: 18px;
+    }
+    .prefect-head{
+      font-size: 32px;
+      line-height: 35px;
+      color: #fff !important;
+    }
+    .perfect-paragraph{
+     font-size: 18px;
+    }
+    .book-head{
+      font-size: 32px;
+      line-height: 35px;
+        }
+        .book-paragraph{
+        font-size: 18px;
+        }
+        .what-head{
+          font-size: 32px;
+          line-height: 35px;
+        }
+        .form{
+          width: 80% !important;
+        }
+        .text-short{
+          font-size: 18px;
+        }
+}
+/*  */
+.franchise-top-bar {
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0 15px;
+            position: static;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            font-size: 16px;
+        }
+        .franchise-top-bar h3{
+          color: #fff;
+          font-weight: 200 !important;
+          font-size: 25px;
+        }
+
+    .unique-video-section {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           /* padding: 26px; */
+       }
+
+       .unique-main-video-container {
+           width: 100%;
+           max-width: 1519px;
+           margin-bottom: 26px;
+           position: relative;
+           text-align: center;
+           color: white;
+       }
+
+       .unique-main-video-container video {
+           width: 100%;
+           height: auto;
+       }
+
+       .unique-main-video-container .unique-overlay-black {
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+           z-index: 5;
+       }
+
+       .unique-main-video-container .unique-play-icon {
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+   font-size: 50px;
+   color: #fff;
+   background: #ffcc00;
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   box-shadow: 0 0 26px #ffcc00;
+   animation: unique-glow 1s infinite;
+   z-index: 10;
+       }
+
+       .unique-main-video-container .unique-heading,
+       .unique-main-video-container .unique-paragraph {
+           position: absolute;
+           left: 50%;
+           transform: translateX(-50%);
+           z-index: 10;
+           color: #ffcc00;
+           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+       }
+
+       .unique-main-video-container .unique-heading {
+           top: 30%;
+           font-size: 24px;
+           font-weight: bold;
+       }
+
+       .unique-main-video-container .unique-paragraph {
+           top: 35%;
+           font-size: 18px;
+       }
+
+       @keyframes unique-glow {
+           0% {
+               box-shadow: 0 0 5px #ffcc00;
+           }
+           50% {
+               box-shadow: 0 0 26px #ffcc00;
+           }
+           100% {
+               box-shadow: 0 0 5px #ffcc00;
+           }
+       }
+
+       .unique-thumbnail-container {
+           display: flex;
+           gap: 10px;
+           overflow-x: auto;
+           padding: 10px;
+           width: 100%;
+           justify-content: center;
+       }
+
+       .unique-thumbnail {
+           width: 285px;
+           cursor: pointer;
+           transition: transform 0.3s ease;
+           position: relative;
+           border: 2px solid #ddd;
+           border-radius: 10px;
+           overflow: hidden;
+       }
+
+       .unique-thumbnail img {
+           width: 100%;
+           height: 120%;
+           display: block;
+       }
+
+       .unique-thumbnail:hover {
+           transform: scale(1.05);
+       }
+
+       .unique-thumbnail .unique-thumbnail-play-icon {
+           position: absolute;
+           top: 10px;
+           right: 10px;
+           font-size: 26px;
+           color: white;
+           background: rgba(0, 0, 0, 0.5);
+           border-radius: 50%;
+           padding: 5px;
+       }
+
+       .unique-thumbnail .unique-thumbnail-caption {
+           position: absolute;
+           bottom: 10px;
+           left: 10px;
+           right: 10px;
+           text-align: center;
+           font-size: 14px;
+           color: #ffcc00;
+           background: rgba(0, 0, 0, 0.7);
+           padding: 5px;
+           border-radius: 5px;
+       }
+
+       .unique-overlay {
+           display: none;
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 99%;
+           background: black;
+           justify-content: center;
+           align-items: center;
+           z-index: 1000;
+           flex-direction: column;
+           color: white;
+           text-align: center;
+       }
+
+       .unique-overlay video {
+           width: 100%;
+           max-width: 80%;
+       }
+
+       .unique-overlay .unique-close-icon {
+           position: absolute;
+           top: 26px;
+           right: 26px;
+           font-size: 93px;
+           color: white;
+           cursor: pointer;
+       }
+       @media screen and (max-width: 768px) {
+    .unique-main-video-container .unique-heading {
+        top: 5%;
+        font-size: 16px;
+        width: 100%;
+        font-weight: bold;
+    }
+    .unique-main-video-container .unique-paragraph {
+        top: 15%;
+        font-size: 13px;
+    }
+    .unique-thumbnail .unique-thumbnail-caption {
+        font-size: 0px;
+        background: none;
+    }
+    .unique-thumbnail .unique-thumbnail-play-icon {
+        position: absolute;
+        top: 4px;
+        right: 2px;
+        font-size: 7px;
+    }
+}
+       /* Footer Design */
+    .footer-container {
+      background: #ffffff;
+    }
+    .footer-container li, .footer-container p {
+    color: #000;
+    font-weight: 600;
+} 
+.footer-container .accordion-menu li li a:not(.button) {
+    color: #000000;
+}
+.footer-container .accordion-menu > li > a {
+  color: #000;
+  font-size: 21px;
+}
+.footer-social a {
+  color: #000000;
+  }
+  .footer-container.lazyloaded {
+        background-image: url('images/bg-footer.webp');
+        background-position:revert-layer;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+       </style>
+    <style type="text/css" id="wp-custom-css">
+.background {
+    background-image: url('images/class-view.jpg'); /* Replace with your image path */
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    padding: 250px 0 250px;
+    z-index: 1;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.534); /* Light black overlay */
+    z-index: -1;
+}
+.content {
+    /* background: rgba(0, 0, 0, 0.5);  */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+      p.copyright img {
+        display: none;
+    }
+    .home-locations_state {
+        font-weight:300;
+        font-size:13px;
+        line-height: 0.8;
+    }
+    
+    .iframe-scaler {
+        width:100%;
+        max-width:1000px;
+        padding: 70px 0;
+        margin:0 auto;
+    }
+    
+    .home-enrol-child {
+        display:none!important;
+    }
+    
+    @media screen and (max-width: 996px){
+        .iframe-scaler {
+        padding: 150px 0;
+    }
+    }
+    
+    @media screen and (max-width: 768px){
+        .iframe-scaler {
+        padding: 100px 0;
+    }
+   
+    }
+    
+    .responsive-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    }
+    
+    /* Then style the iframe to fit in the container div with full height and width */
+    .responsive-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+        border-radius:15px;
+    }
+    @media screen and (min-width: 64em){
+    .home-locations .large-up-4 .cell, .page-builder .large-up-4 .cell {
+        width: 20%!important;
+        
+    }
+        .home-locations__text {
+            font-size:14px;
+            text-transform: capitalize;
+        }
+    }
+    
+    .su-spoiler-style-default>.su-spoiler-title>.su-spoiler-icon {
+        left: 0;
+        color: #9c3;
+    }
+    
+    .page-hero .grid-x {
+        min-height: 400px;
+    }
+    .padding-top {
+        padding-top: 46px;
+    }
+    
+    .footer-container{
+        margin-bottom: -35px;
+    }
+    
+    div.CommonLayout__Inner-d1flxf-1.ViFXM a, .navigation.post-navigation, .byline.author, time {
+        display: none !important;
+    }
+    
+    a.CommonLayout__ItemsContainer-d1flxf-0.ANSkS {
+        display: block !important;
+    }
+    
+    div.CommonLayout__Inner-d1flxf-1.ViFXM a, .home-enrol-child__form {
+        display: none !important;
+    }
+    a.CommonLayout__ItemsContainer-d1flxf-0.ANSkS {
+        display: block !important;
+    }
+    
+    .facebook-embed-code {
+        text-align: center;
+    }
+    
+    
+    .su-spoiler-style-default>.su-spoiler-title {
+        padding-left: 27px;
+        padding-right: 0;
+        color: black;
+    }
+
+    .g-form-title h2, .cf7_title {
+        font-weight: 400 !important;
+        color: #9c3;
+    }
+    
+    .cf7-wrap {
+        margin-top:20px;
+        margin-bottom:20px;
+        border-bottom: 1px solid #CCC;
+        padding: 0 10px 0px 0;	
+    }
+    
+    .checkbox-space {
+        margin: 20px 0 20px 0;	
+    }
+    
+    .RDXNZ {
+        background-color: #ff6f6f !important;
+    
+    }
+    
+    .kuTFUq, .kuTFWk, .dUbGqo {
+            color: #fff !important;
+        font-size: 17px !important;
+    }
+    
+    div.elfsight-app-3f62e0bd-6bbf-4555-9b22-386117e44f46 a:last-child, div.elfsight-app-8de31061-172e-4c96-a1aa-888a68607c5a a:last-child, div.elfsight-app-0d491784-ff40-4522-9532-e61b75bdb57a a:last-child {
+        display: none !important;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .checkbox-space span.wpcf7-list-item {
+        width: 100%;	
+    }
+        
+        .mobile-hide {
+            display: none;
+        }
+        
+    a.button.footer-find-centre.secondary {
+            margin-bottom: 10px;
+        }
+    }
+    
+    span.wpcf7-list-item {
+        display: inline-block;
+        margin: 0 1em 0 0 !important;
+    }
+    
+    .comment-respond {
+        display:none!important;
+    }
+    
+    .location-radio .wpcf7-list-item-label, .qualification .wpcf7-list-item-label, .role-type .wpcf7-list-item-label {
+        font-weight:400;
+    }
+    
+    .grecaptcha-badge {
+        opacity:0;
+    }
+    
+    .localb {
+        max-width:160px;
+        padding-bottom:20px;
+    }
+    
+    .hero-points__content button {
+        width:80%;
+    }
+    
+    .home-aoc {
+            padding: 50px 25px 0;
+        text-align: center;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        font-style: italic;
+        background-color: rgba(1,1,1,0.03);
+        color: black;
+    }
+    
+    .home-aoc p {
+        margin:0;
+        max-width:1000px;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .home-aoc  {
+        font-size: 13px;	
+    }
+    }
+    
+    
+    /* Start of CSS for childcare CMS */
+    
+    @media screen and (min-width: 90em) {
+    div#childcarecrm-tour-form {
+            margin: 0 auto;
+        width: 80%;
+    }
+        
+        body.page-id-4070	.iframe-embed.lazyloaded {
+            padding-top: 140px!important;
+            padding-bottom: 100px!important;
+            background-image: url(/wp-content/themes/foundation/dist/assets/images/testimonials-bg-lg.svg),url(/wp-content/themes/foundation/dist/assets/images/iframe-bg-top.svg);
+        }
+        
+        
+        div.fc-view.fc-dayGridWeek-view.fc-dayGrid-view, div.childcarecrm-form__group, div#childcarecrm-form__confirmation-data {
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        color: #666;
+        box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
+        }
+        
+    }
+    
+        p.childcarecrm-form__pst-type-display label {
+            font-family: "Fredoka One";
+        font-style: normal;
+        font-weight: 400;
+            font-size: 24px;
+        }
+    
+    body.page-id-4070 p.childcarecrm-form__pst-type-display label {
+        font-size: 1.5rem;
+    }
+    
+    
+    
+    div.fc-view.fc-dayGridWeek-view.fc-dayGrid-view, div.childcarecrm-form__group, div#childcarecrm-form__confirmation-data {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        color: #666;
+        box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
+        }
+    
+    body.page-id-4070 table {
+        margin-bottom: 0;
+    }
+    
+    h1.childcarecrm-form__confirmation-header {
+        font-size: 30px;
+    }
+    
+    h1.entry-title {
+        color: #9c3;
+        font-size: 30px;
+    }
+    
+    .fc-dayGridWeek-view .fc-content-skeleton, .fc-dayGridDay-view .fc-content-skeleton {
+        padding-bottom: 0;
+    }
+    
+    div.childcarecrm-form__disclaimer {
+        margin:20px 0;
+    }
+    
+    .fc-event:hover {
+        color: #000;
+    }
+    
+    .fc-day-grid-event, th.fc-day-header {
+        padding: 6px 8px;
+        text-align: center;
+    }
+    
+    button#childcarecrm-form__submit-button, .childcarecrm-form__tour-child-toggle button, .childcarecrm-form__back-button, button#childcarecrm-form__confirm-button {
+        background: #9c3;
+        padding: 0.85em 1em;
+        font-size: 1rem;
+        color: #fff;
+        font-weight: 800;
+        transition: background-color .25s ease-out,color .25s ease-out;
+    }
+    
+    button#childcarecrm-form__submit-button:hover, .childcarecrm-form__tour-child-toggle button:hover, .childcarecrm-form__back-button:hover, button#childcarecrm-form__confirm-button:hover {
+        background: #82ad2b;
+    
+    }
+
+    button.childcarecrm-form__go-back-button  {
+        background: #46499e;
+        padding: 0.85em 1em;
+        font-size: 1rem;
+        color: #fff;
+        font-weight: 800;
+        transition: background-color .25s ease-out,color .25s ease-out;
+    }
+    
+    button.childcarecrm-form__go-back-button:hover  {
+        background: #383a7e;
+    
+    }
+    
+    button.childcarecrm-form__go-back-button {
+        margin-left: 20px;
+    }
+    
+    
+    @media screen and (min-width: 64em){
+    .site-header .desktop-menu>li {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+        font-size:15px!important;
+    }
+    }
+    
+    .toggle-offcanvas .fab, .toggle-offcanvas .fas, .toggle-offcanvas svg {
+        color: #ff6f6f;
+        font-size: 26px;
+        margin-right: 20px;
+    }
+ 
+    /*
+    @media screen and (min-width: 64em){
+    .page-id-4140 .page-builder.section {
+        padding-top: 75px !important;
+        padding-bottom: 75px !important;
+    }
+    }
+    
+    .page-id-4140 .page-builder.section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }*/
+    
+    
+    @media screen and (min-width: 64em){
+    .page-id-4140 .image-carousel-left-content-right__outer-gallery::before {
+        -webkit-transform: translate(-30%,-60%);
+        -ms-transform: translate(-30%,-60%);
+        transform: translate(-30%,-60%);
+        width: 100px !important;
+        height: 100px !important;
+    }
+    }
+    .home-testimonials.lazyloaded {
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("images/testimonials-bg-lg.svg");
+}
+@media screen and (min-width: 40em) {
+    .home-testimonials.lazyloaded {
+        background-position: left center;
+        background-image: url("images/testimonials-bg-lg.svg");
+    }
+}
+@media screen and (min-width: 64em) {
+    .home-testimonials.lazyloaded {
+        background-position: center center;
+    }
+}
+
+@media screen and (min-width: 64em) {
+    .home-hero {
+        padding-left: 0;
+        padding-right: 0;
+        height: 650px;
+        padding-bottom: 0;
+        padding-top: 0;
+        background-image: url('images/home-hero-flowers.svg');
+        background-position: -200px bottom;
+        background-size: 35%;
+        background-repeat: no-repeat;
+    }
+    .home-hero .grid-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .home-hero .grid-container,
+    .home-hero .grid-x {
+        height: 100%;
+    }
+}
+.home-hero::after {
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 100%;
+    background: url('images/hero-bg-sm-wave.svg') no-repeat center 102% !important;
+    background-size: contain;
+    position: absolute;
+}
+.footer-container.lazyloaded {
+    background-image: url('images/footer-sm-bg.png');
+    background-position: left bottom, right bottom;
+    background-repeat: no-repeat, no-repeat;
+}
+@media screen and (min-width: 40em) {
+    .footer-container.lazyloaded {
+        background-image: url('images/footer-lg-bg.webp');
+    }
+}
+
+@media screen and (min-width: 64em) {
+    .home-hero::after {
+        background-image: url('/images/hero-bg-lg-wave.svg') !important;
+    }
+}
+/*  */
+.formnew{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+        .form {
+  width: 40%;
+}
+
+.form label {
+  font-size: 1.2rem;
+}
+
+.input,
+.textarea,
+.number,
+.buttonnew {
+  width: 100%;
+  padding: 0.5em;
+  border: none;
+  font-size: 1.2rem;
+}
+.input[type="text"],
+.input[type="email"],
+.input[type="number"],
+.textarea {
+  margin: 0 0 1e
+  
+  m;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.textarea {
+  height: 6em;
+}
+.input[type="submit"],
+.buttonnew {
+  background: #4570f3;
+  color: #fff;
+  cursor: pointer;
+}
+.input[type="submit"]:hover,
+.buttonnew:hover {
+  background: #6e65f4;
+}
+/*  */
+.loading-sec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.788); /* Overlay color */
+  padding: 75px 0 0px;
+}
+
+.loading-sec p{
+  font-size: 24px;
+  font-weight: 800;
+  color: #000000;
+}
+
+.button.hollow.secondary,
+.home-enrol-child__form input.hollow.secondary[type="submit"],
+.page-builder form input.hollow.secondary[type="submit"],
+.wp-block-button .hollow.secondary.wp-block-button__link,
+.wp-block-button.is-style-outline .secondary.wp-block-button__link {
+    border: 2px solid #46499e;
+    color: #46499e;
+    padding: 5px 15px !important;
+}
+/*  */
+.site-header-outer {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+    background:white;
+    margin-top: -16px !important;
+}
+/* Footer Design */
+.footer-container {
+      background: #ffffff;
+    }
+    .footer-container li, .footer-container p {
+    color: #000;
+    font-weight: 600;
+} 
+.footer-container .accordion-menu li li a:not(.button) {
+    color: #000000;
+}
+.footer-container .accordion-menu > li > a {
+  color: #000;
+  font-size: 21px;
+}
+.footer-social a {
+  color: #000000;
+  }
+  .footer-container.lazyloaded {
+        background-image: url('images/bg-footer.webp');
+        background-position:revert-layer;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+         
+        
+    <!-- <link rel="stylesheet" href="https://www.thrive.edu.au/wp-content/themes/foundation/override.css">	 -->
+        
+    </head>
+
+<body data-rsssl=1 class="home page-template page-template-page-templates page-template-home-template page-template-page-templateshome-template-php page page-id-978 offcanvas">
+
+			
+<!-- <nav class="mobile-off-canvas-menu off-canvas position-left" id="off-canvas-menu" data-off-canvas data-transition="overlap" data-auto-focus="false" role="navigation">
+	<a class="off-canvas-logo" href="https://www.thrive.edu.au/" rel="home"><img alt="Times Pre School Early Learning centres" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20width=&#039;199&#039;%20height=&#039;54&#039;%20viewBox=&#039;0%200%20199%2054&#039;%3E%3C/svg%3E" width="199" height="54" class="perfmatters-lazy" data-src="time-logo.jpg" /><noscript><img alt="Times Pre School Early Learning centres" src="time-logo.jpg" width="199" height="54" /></noscript> </a>
+
+	
+
+	<div class="offcanvas-menu-container">
+		<ul id="menu-main-menu" class="vertical menu" data-accordion-menu data-submenu-toggle="true"><li id="menu-item-2113" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-2113 is-active"><a href="/" aria-current="page">Home</a></li>
+<li id="menu-item-332" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-332"><a href="https://www.thrive.edu.au/about-us/">About us</a>
+<ul class="vertical nested menu">
+	<li id="menu-item-2921" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2921"><a href="https://www.thrive.edu.au/orientation/">Orientation</a></li>
+	<li id="menu-item-2922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2922"><a href="https://www.thrive.edu.au/parent-news/">Parent News</a></li>
+	<li id="menu-item-4558" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4558"><a href="https://www.thrive.edu.au/blog/">Blog</a></li>
+</ul>
+</li>
+<li id="menu-item-331" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-331"><a href="/curriculum/">Curriculum</a>
+<ul class="vertical nested menu">
+	<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="https://www.thrive.edu.au/socially-thriving/">Socially Thriving</a></li>
+	<li id="menu-item-2782" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2782"><a href="https://www.thrive.edu.au#0">Academically Thriving</a></li>
+	<li id="menu-item-2783" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2783"><a href="https://www.thrive.edu.au/physically-thriving/">Physically Thriving</a></li>
+	<li id="menu-item-2784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2784"><a href="https://www.thrive.edu.au/eco-thriving/">Eco Thriving</a></li>
+	<li id="menu-item-3666" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3666"><a href="https://www.thrive.edu.au/emotionally-thriving/">Emotionally Thriving</a></li>
+	<li id="menu-item-3149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3149"><a href="https://www.thrive.edu.au/preschool-program/">Preschool Program</a></li>
+	<li id="menu-item-3155" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3155"><a href="https://www.thrive.edu.au/extra-curricular-programs/">Extra-Curricular Programs</a></li>
+</ul>
+</li>
+<li id="menu-item-295" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-295"><a href="/centres/">Centres</a>
+<ul class="vertical nested menu">
+	<li id="menu-item-2604" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2604"><a href="https://www.thrive.edu.au/childcare-hornsby/">Hornsby</a></li>
+	<li id="menu-item-2689" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2689"><a href="https://www.thrive.edu.au/childcare-north-ryde/">North Ryde</a></li>
+	<li id="menu-item-2677" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2677"><a href="https://www.thrive.edu.au/childcare-coniston/">Coniston</a></li>
+	<li id="menu-item-2704" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2704"><a href="https://www.thrive.edu.au/childcare-merrylands/">Merrylands</a></li>
+	<li id="menu-item-2718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718"><a href="https://www.thrive.edu.au/childcare-pyrmont/">Pyrmont</a></li>
+	<li id="menu-item-3493" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3493"><a href="https://www.thrive.edu.au/childcare-blakehurst/">Blakehurst</a></li>
+	<li id="menu-item-3554" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3554"><a href="https://www.thrive.edu.au/childcare-ermington/">Ermington</a></li>
+	<li id="menu-item-4405" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4405"><a href="/childcare-rosehill">Rosehill</a></li>
+	<li id="menu-item-4666" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4666"><a href="https://www.thrive.edu.au/childcare-north-gosford/">North Gosford</a></li>
+	<li id="menu-item-4942" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4942"><a href="https://www.thrive.edu.au/childcare-mount-druitt/">Mount Druitt</a></li>
+	<li id="menu-item-4941" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4941"><a href="https://www.thrive.edu.au/childcare-waterloo/">Waterloo</a></li>
+	<li id="menu-item-4824" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4824"><a href="https://www.thrive.edu.au/childcare-st-marys/">St Marys</a></li>
+	<li id="menu-item-4778" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4778"><a href="https://ccs-thriveelcpicton.kinderm8.com.au/waitlist-form">Picton &#8211; Coming Soon</a></li>
+	<li id="menu-item-4911" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4911"><a href="http://ccs-thriveelcoldtoongabbie.kinderm8.com.au/waitlist-form">Toongabbie &#8211; Coming Soon</a></li>
+	<li id="menu-item-4912" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4912"><a href="http://ccs-thrivewarragul.kinderm8.com.au/waitlist-form">Warragul, VIC &#8211; Coming Soon</a></li>
+</ul>
+</li>
+<li id="menu-item-2620" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2620"><a href="https://www.thrive.edu.au/contact-us/">Contact us</a></li>
+<li id="menu-item-4149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4149"><a href="https://www.thrive.edu.au/new-careers/">Careers</a></li>
+</ul>	</div>
+
+
+			<div class="offcanvas__contact">
+							<a class="button button-green" href="tel:0283557777">02 8355 7777</a>
+						<a href="/book-a-tour" class="button button-red">Book a tour</a>
+
+		</div>
+	
+
+			<div class="offcanvas__social">
+
+							<a target="_blank" href="https://www.facebook.com/Times Pre School-Early-Learning-Centres-Artarmon-134288737019774/?ref=page_internal"><i class="fab fa-facebook"></i></a>
+							<a target="_blank" href="https://www.instagram.com/thrive_early_learning/"><i class="fab fa-instagram"></i></a>
+							<a target="_blank" href="https://au.linkedin.com/company/thrive-early-learning-centres"><i class="fab fa-linkedin"></i></a>
+					</div>
+
+	
+	<div class="offcanvas__logos">
+		<a target="_blank" href="http://www.acecqa.gov.au/"><img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20width=&#039;24&#039;%20height=&#039;24&#039;%20viewBox=&#039;0%200%2024%2024&#039;%3E%3C/svg%3E" alt class="perfmatters-lazy" data-src="https://www.thrive.edu.au/wp-content/themes/foundation/dist/assets/images/acecqa-logo.png" /><noscript><img width="24" height="24" src="https://www.thrive.edu.au/wp-content/themes/foundation/dist/assets/images/acecqa-logo.png" alt=""></noscript> Acecqa</a>
+		<a target="_blank" href="https://www.humanservices.gov.au/customer/dhs/centrelink"><img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20width=&#039;24&#039;%20height=&#039;24&#039;%20viewBox=&#039;0%200%2024%2024&#039;%3E%3C/svg%3E" alt class="perfmatters-lazy" data-src="https://www.thrive.edu.au/wp-content/themes/foundation/dist/assets/images/centrelink-logo.png" /><noscript><img width="24" height="24" src="https://www.thrive.edu.au/wp-content/themes/foundation/dist/assets/images/centrelink-logo.png" alt=""></noscript> Centrelink</a>
+	</div>
+
+
+</nav> -->
+
+<div class="off-canvas-content" data-off-canvas-content>	
+  <!-- <div class="amazon-bestseller bg-dark" style="padding-top: 5px;">
+    <div class="container">
+        <div class="row text-center text-white">
+            <div class="col-lg-12"><p style="padding-bottom: 5px;"><span><img src="/images/indian-flag.png" width="50" alt=""></span><b> India’s #Most Successful Pre-School Franchise </b></p>
+            </div>
+        </div>
+    </div>
+  </div> -->
+  <div class="franchise-top-bar">
+    <h2 style="color: #fff;text-transform: uppercase;font-size: 20px;">India’s <img src="/images/indian-flag.png" width="35" alt=""> #Most Loved Pre-School </h2></div>
+	<div class="site-header-outer">
+  
+    <header class="site-header" role="banner">
+			<div class="site-title-bar " >
+				<div class="title-bar-left title-bar-left-logo">
+					<!-- <button class="toggle-offcanvas" aria-label="Main Menu" type="button" data-toggle="off-canvas-menu">
+						<i class="fa fa-bars"></i>
+						<i class="fa fa-T.I.M.E kids"></i>
+					</button> -->
+					<span class="site-mobile-title title-bar-title">
+						<a href="#0" rel="home">
+              <img width="135" style="margin-left: 130px;" height="54" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20width=&#039;199&#039;%20height=&#039;54&#039;%20viewBox=&#039;0%200%20199%2054&#039;%3E%3C/svg%3E" alt="T.I.M.E kids pre school Early Learning centres" class="perfmatters-lazy" data-src="/images/time-logo.jpg" /><noscript>
+              <img width="199" height="54" src="/images/time-logo.jpg" alt="T.I.M.E kids pre school Early Learning centres"></noscript></a>
+              <a href="#0" class="button secondary-cta parents-popup-form-btn" onclick="openPopup()"><img src="/images/Walking.png" width="26" alt="">Book your free tour now</a> 
+            </span>
+				</div>
+			</div>
+
+			<nav class="site-navigation top-bar" role="navigation" id="">
+				<div class="top-bar-left">
+					<div class="site-desktop-title top-bar-title">
+						<a href="#0" rel="home"><img width="199" height="54" src="data:/image/classroom.png;http://www.w3.org/2000/svg&#039;%20width=&#039;199&#039;%20height=&#039;54&#039;%20viewBox=&#039;0%200%20199%2054&#039;%3E%3C/svg%3E" alt="T.I.M.E kids pre school Early Learning centres" class="perfmatters-lazy" data-src="/images/time-logo.jpg" /><noscript>
+              <img width="199" height="54" src="/images/time-logo.jpg" alt="T.I.M.E kids pre school Early Learning centres"></noscript></a>
+					</div>
+				</div>
+			
+				<div class="top-bar-right top-bar-ctas">
+					<a href="#0" class="button secondary-cta parents-popup-form-btn" onclick="openPopup()"><img src="/images/Walking.png" width="26" alt="">Book your free tour now</a> 
+				</div>
+			</nav>
+
+		</header>
+	</div>
+
+	
+  <!-- <div id="side-links" class="side-links">
+          <a class="side-links__calculator" href="https://www.humanservices.gov.au/customer/dhs/centrelink">
+        <div>
+          <i class="fas fa-calculator"></i>
+        </div>
+        <span>Subsidy Calculator</span>
+      </a>
+              <a class="side-links__centre" href="https://www.thrive.edu.au/centres/">
+        <div>
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <span>Find Your Centre</span>
+      </a>
+              <a class="side-links__book" href="/book-tour/">
+        <div>
+          <i class="fas fa-walking"></i>
+        </div>
+        <span>Book A Tour Today</span>
+      </a>
+    
+  </div> -->
+
+
+
+	
+  <section class="animate-section home-hero">
+    <div class="grid-container fluid" style="opacity: 1;">
+      <div class="grid-x align-middle">
+        <div class="cell large-6 home-hero__content">
+          <div>
+            <div>
+              <h1 style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">We are shaping happy and confident young minds at T.I.M.E. PerSchool Early Learning</h1>
+<!-- <p style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">Click the link below to book a tour at your nearest Thrive Early Learning Centre</p> -->
+<p style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><a class="button secondary-new parents-popup-form-btn" onclick="openPopup()">Book a tour</a> 
+  <a class="button button-red-new parents-popup-form-btn" onclick="openPopup()">Enrolment now open</a> </p>
+  <!-- <a class="button hollow" href="https://www.thrive.edu.au/about-us/">Learn More</a></p> -->
+            </div>
+
+          </div>
+
+        </div>
+        <div class="cell large-6 home-hero__image">
+          <div class="home-hero__image-inner">
+            <img class="ls-is-cached lazyloaded entered pmloaded" data-src="/images/girl.jpg" data-srcset="/images/girl.jpg 300w,/images/girl.jpg 768w,/images/girl.jpg 1024w,,,,,,,/images/girl.jpg 640w,/images/girl.jpg 1024w,/images/girl.jpg 1200w," data-sizes="(max-width: 1200px) 100vw, 1200px" width="1200" height="800" sizes="(max-width: 1200px) 100vw, 1200px" srcset="https://www.thrive.edu.au/wp-content/uploads/2020/03/New-home-banner-300x200.jpg 300w,/images/girl.jpg 768w,/images/girl.jpg 1024w,,,,,,,/images/girl.jpg 640w,/images/girl.jpg 1024w,/images/girl.jpg 1200w," src="/images/girl.jpg" data-ll-status="loaded">          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <div class="loading-sec">
+    <p>Don't miss the opportunity! From today, <span id="current-date"></span> , <br>
+      almost all seats for this month have been taken!</p>
+      <img src="/images/loading tick.gif" style="width: 450px;" alt="">
+  </div> -->
+  <div class="loading-sec">
+    <h2 class="pillars-head">The Four Pillars of T.I.M.E  Kid's  All-Inclusive, <br> Most loved Preschool</h2>
+  </div>
+  <section class="hero-points section">
+    <div class="grid-container">
+      <div class="cell">
+        <!-- <h2 style="text-align: center;">The Four Pillars of T.I.M.E Kid's <br> All-Inclusive, Competitively Priced Preschool</h2> -->
+<!-- <p style="text-align: center;">Choosing a Kindergarten or Day Care for your child isn’t an easy task. Book a tour at a Times Pre School centre near you</p> -->
+      </div>
+      <div class="grid-x grid-padding-x medium-up-2 large-up-4">
+                  <a href="#0" target="_self" class="cell hero-points__1">
+            <div class="hero-points__inner">
+              <picture class="hero-points__img">
+                <source media="(min-width: 40em)" data-srcset="images/hero-lsp-01.svg">
+                <source media="(min-width: 0)" data-srcset="images/hero-points-sm-01.svg">
+                <img class="lazyload" data-src="images/hero-lsp-01.svg" alt="">
+              </picture>
+
+              <div class="hero-points__content">
+                <div class="text-uppercase"><b>Socially Thriving</b></div>
+                <p>Structured play helps your child develop crucial interpersonal and communication skills.</p>
+                                <!-- <button class="button button-white">
+                  <i class="fas fa-user"></i>                  Learn more                </button> -->
+              </div>
+              
+            </div>
+          </a>
+                  <a href="#0" target="_self" class="cell hero-points__2">
+            <div class="hero-points__inner">
+              <picture class="hero-points__img">
+                <source media="(min-width: 40em)" data-srcset="/images/hero-lsp-02.svg">
+                <source media="(min-width: 0)" data-srcset="/images/hero-points-sm-02.svg">
+                <img class="lazyload" data-src="/images/hero-lsp-02.svg" alt="">
+              </picture>
+
+              <div class="hero-points__content">
+                <div class="text-uppercase"><b>Academically Thriving</b></div>
+                <p>Our curriculum is designed to build a strong foundation in early literacy, numeracy, and critical thinking skills.</p>
+                                <!-- <button class="button button-white">
+                  <i class="fas fa-user"></i>                  Learn more                </button> -->
+              </div>
+              
+            </div>
+          </a>
+                  <a href="/eco-thriving/" target="_self" class="cell hero-points__3">
+            <div class="hero-points__inner">
+              <picture class="hero-points__img">
+                <source media="(min-width: 40em)" data-srcset="/images/hero-lsp-03.svg">
+                <source media="(min-width: 0)" data-srcset="/images/hero-points-sm-03.svg">
+                <img class="lazyload" data-src="/images/hero-lsp-03.svg" alt="">
+              </picture>
+
+              <div class="hero-points__content">
+                <div class="text-uppercase"><b>Ecologically thriving</b></div>
+                <p>Activities center around nature exploration and environmental stewardship, fostering a love for nature.</p>
+                                <!-- <button class="button button-white">
+                  <i class="fas fa-user"></i>                  Learn more                </button> -->
+              </div>
+              
+            </div>
+          </a>
+                  <a href="/physically-thriving/" target="_self" class="cell hero-points__4">
+            <div class="hero-points__inner">
+              <picture class="hero-points__img">
+                <source media="(min-width: 40em)" data-srcset="/images/hero-lsp-04.svg">
+                <source media="(min-width: 0)" data-srcset="/images/hero-points-sm-04.svg">
+                <img class="lazyload" data-src="/images/hero-lsp-04.svg" alt="">
+              </picture>
+
+              <div class="hero-points__content">
+                <div class="text-uppercase"><b>Physically thriving</b></div>
+                <p>We use age-appropriate physical activities to enhance your child’s motor skills and overall health.</p>
+                                <!-- <button class="button button-white">
+                  <i class="fas fa-user"></i>                  Learn more                </button> -->
+              </div>
+              
+            </div>
+          </a>
+              </div>
+    </div>
+  </section>
+
+
+
+
+	<section class="home-intro-locations">
+    <div class="loading-sec">
+      <h2 class="give-head">Give Your Child the Most Socially, <br> Academically, and Physically <br> Enriching Preschool Experience</h2>
+    </div>
+		  <section class="section home-intro" style="background: url('images/bg-side-design.webp');background-repeat: no-repeat;background-size: cover;">     
+  <div class="contain-eyes">
+    <div class="outer-eye">
+      <div class="inner-eye"></div>
+    </div>
+    <div class="outer-eye outer-eye-2">
+      <div class="inner-eye"></div>
+    </div>
+  </div>
+ 
+    <div class="grid-container">
+      <!-- <div class="cell">
+        <h2 style="text-align: center;">Give Your Child the Most Socially, Academically, <br> and Physically Enriching Preschool Experience</h2>
+      </div> -->
+      <div class="grid-x grid-padding-x align-middle">
+        <div class="cell large-6 home-intro__content">
+          <div>
+<p class="give-paragraph">Finding the right preschool for your child is one of the most important decisions you’ll ever make. At T.I.M.E Kids, we understand how crucial these early years are for your child's development. Our tailored approach ensures a balanced, holistic education that sets them up for success.</p>
+<p class="give-paragraph">At T.I.M.E Kids, we know that every child is unique. Our program is designed to cater to the individual needs of each child, ensuring they thrive socially, academically, and physically.</p>
+<p>
+  <!-- <a class="button hollow" href="https://www.thrive.edu.au/about-us/">Learn More</a>  -->
+  <a class="button button-red parents-popup-form-btn" onclick="openPopup()">Book Your Free Tour</a>
+</p>
+          </div>
+
+        </div>
+        <div class="cell large-6 home-intro__image">
+          <!-- <div class="home-intro__image-container"> -->
+            <img src="images/sports.jpg" style="border-radius: 30px;" alt="">
+                        <!-- <img class=" lazyload"  data-src="images/sports.jpg"  data-srcset="images/sports.jpg 300w,images/sports.jpg 512w,images/sports.jpg 512w,images/sports.jpg 512w,images/sports.jpg 512w,,,,,images/sports.jpg 512w,images/sports.jpg 512w,images/sports.jpg 512w,images/sports.jpg 512w,images/sports.jpg 500w,images/sports.jpg 512w,images/sports.jpg 512w" data-sizes="(max-width: 512px) 100vw, 512px" width="512" height="512" />                          -->
+                         <!-- <div class="home-intro__caption">Learning for life</div> -->
+                      <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--  -->
+<div class="loading-sec" style="margin-top: 0px;">
+  <h2 class="pillars-head">Top T.I.M.E. Pre School </h2>
+</div>
+  <section class="section home-locations lazyloaded is-active" style="margin-top: 0px;">
+    <img class="perfmatters-lazy" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20width=&#039;320&#039;%20height=&#039;320&#039;%20viewBox=&#039;0%200%20320%20320&#039;%3E%3C/svg%3E" width="320" height="320" alt data-src="/images/home-sun.svg" /><noscript><img class="" src="/images/home-sun.svg" width="100" alt=""></noscript>
+
+    <div data-scrollmagic-pin-spacer="" class="scrollmagic-pin-spacer" style="inset: 0px auto auto -56px; margin: 0px; display: none; position: absolute; box-sizing: content-box; width: auto; height: auto;"><svg class="home-intro__sun" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 320 320" style="visibility: inherit; opacity: 1; transform: translate(-10%, 0%) matrix(1, 0, 0, 1, 0, 0); position: absolute; margin: auto; inset: 712px auto auto 0px; transform-origin: center center 0px;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FCDF71;}
+	.st1{fill:#846959;}
+	.st2{fill:#F4BA4A;}
+	
+</style>
+<g>
+	<g id="sun-flares">
+    <path class="st0" d="M254.1,216.6c-30.3,50.6-97.2,70.5-144.6,36.3C62,218.7,43.6,157.6,73.2,108.3c30.3-50.6,97.2-70.5,144.6-36.3
+		C265.2,106.2,283.6,167.3,254.1,216.6z"></path>
+		<g>
+			<path class="st2" d="M261.9,116.1l37.2-35.2l-50.8,13.4C253.7,101.2,258.2,108.5,261.9,116.1z"></path>
+			<path class="st2" d="M270.4,139.3l19.6-10.8l-22.8,0.1C268.4,132.1,269.5,135.7,270.4,139.3z"></path>
+			<path class="st2" d="M273.4,172.2l46.6-11.1L272.2,148C273.5,156,273.9,164.1,273.4,172.2z"></path>
+			<path class="st2" d="M243.7,88.6l12.7-21l-21,12.2C238.3,82.7,241.1,85.6,243.7,88.6z"></path>
+			<path class="st2" d="M196.5,54.9l0.5-23.2l-11.5,20C189.2,52.6,192.8,53.6,196.5,54.9z"></path>
+			<path class="st2" d="M173,49.9L161.1,0l-14,51.1C155.7,49.6,164.4,49.2,173,49.9z"></path>
+			<path class="st2" d="M220.6,67.5c1.9,1.4,3.8,2.8,5.6,4.3L241,22l-36.5,36.1C210,60.6,215.4,63.7,220.6,67.5z"></path>
+			<path class="st2" d="M81,88.6c3.1-3.6,6.5-6.9,10-10L66.6,63.9L81,88.6z"></path>
+			<path class="st2" d="M271.2,188c-0.7,3.2-1.6,6.4-2.6,9.6l20,0.4L271.2,188z"></path>
+			<path class="st2" d="M242.6,240.2c-2.3,2.4-4.7,4.7-7.2,6.8l17.2,10.4L242.6,240.2z"></path>
+			<path class="st2" d="M55.9,137.8c1-4.7,2.3-9.3,4-13.9l-29.2-0.6L55.9,137.8z"></path>
+			<path class="st2" d="M264.8,207.4c-1.8,4-3.8,8-6.2,12c-1.7,2.8-3.5,5.6-5.4,8.2l44.9,13.4L264.8,207.4z"></path>
+			<path class="st2" d="M77.7,229l-14.9,24.7l23.9-13.9C83.5,236.3,80.5,232.7,77.7,229z"></path>
+			<path class="st2" d="M122.8,266.8l-0.5,22.8l10.8-18.8C129.6,269.7,126.2,268.3,122.8,266.8z"></path>
+			<path class="st2" d="M148,274.3L159,320l12.3-45.1C163.5,275.6,155.7,275.4,148,274.3z"></path>
+			<path class="st2" d="M106.7,257.4c-4.4-3.2-8.6-6.6-12.5-10.2l-15.1,50.8l35.7-35.4C112.1,261.1,109.4,259.3,106.7,257.4z"></path>
+			<path class="st2" d="M207.2,265.4l31.9,33.7l-11.9-45.4C220.9,258.3,214.2,262.2,207.2,265.4z"></path>
+			<path class="st2" d="M139.8,52.6l-12.3-22.3l0.1,26.1C131.6,54.9,135.6,53.7,139.8,52.6z"></path>
+			<path class="st2" d="M182.1,273.5l9.7,17.6l-0.1-19.9C188.6,272.1,185.4,272.8,182.1,273.5z"></path>
+			<path class="st2" d="M118.3,60.4L80.9,20.9L95.2,75C102.3,69.2,110.1,64.3,118.3,60.4z"></path>
+			<path class="st2" d="M68.7,105.5c2.2-3.6,4.6-7.1,7.1-10.5L22,79.1l39.8,40.1C63.7,114.6,66,110,68.7,105.5z"></path>
+			<path class="st2" d="M55.4,178.5l-26.1,14.4l29.6-0.1C57.4,188,56.3,183.3,55.4,178.5z"></path>
+			<path class="st2" d="M54.5,145.9L0,159l54.7,14.9C53.4,164.6,53.3,155.3,54.5,145.9z"></path>
+			<path class="st2" d="M61.7,200.5l-40.8,38.6l53.9-14.2C69.5,217.2,65.1,209,61.7,200.5z"></path>
+		</g>
+	</g>
+	<path class="st1" d="M181.1,175.7v2.4c0,5.6,4.5,10.1,10.1,10.1h0c5.6,0,10.1-4.5,10.1-10.1v-2.4H181.1z"></path>
+	<ellipse class="st1" cx="228.3" cy="133.9" rx="5.1" ry="12.2"></ellipse>
+	<ellipse class="st1" cx="148" cy="133.9" rx="5.1" ry="12.2"></ellipse>
+	<ellipse class="st2" cx="133.1" cy="159.9" rx="16.1" ry="9.6"></ellipse>
+	<ellipse class="st2" cx="244.1" cy="159.9" rx="16.1" ry="9.6"></ellipse>
+	
+</g>
+</svg></div>
+
+    <div class="grid-container">
+              <!-- <div class="grid-x grid-padding-x home-locations__intro">
+          <div class="cell">
+            <h2 style="text-align: center;">Find your nearest Thrive Early Learning Centre</h2>
+<p style="text-align: center;">Choosing a Kindergarten or Day Care for your child isn’t an easy task. Book a tour at a Thrive centre near you</p>
+          </div>
+        </div> -->
+            <div class="grid-padding-x grid-x medium-up-3 large-up-4 align-center home-locations__list">
+                    <div class="cell home-locations__cell" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+              <a href="#0" class="home-locations__location">
+                                  <div class="home-locations__image">
+                    <img class=" entered pmloaded lazyloaded" data-src="https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg" data-srcset="https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w" data-sizes="(max-width: 168px) 100vw, 168px" width="168" height="168" sizes="(max-width: 168px) 100vw, 168px" srcset="https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg 168w" src="https://www.thrive.edu.au/wp-content/uploads/2020/09/Map-blakehurst-temp-xs.jpg" data-ll-status="loaded">                    <div class="home-locations__pin" style="background-color: rgb(78, 41, 244); opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+
+                  </div>
+                
+                    <div class="home-locations__text" style="background-color: #4e29f4;">
+                      Ahmedabad
+                     
+                      <!-- <div class="home-locations_state">NSW</div> -->
+    </div>
+
+              </a>
+<!-- 
+                              <div class="home-locations__popup">
+                  <h4 style="color: #4e29f4;"><i class="fas fa-map-marker-alt"></i>
+                    Blakehurst                  </h4>
+                  <p>2B James Street Blakehurst 2221</p>                  
+                  <p><strong>Opening Hours</strong><br>7:00am - 6:00pm | Mon-Fri</p>
+                  <a class="button secondary" href="https://www.thrive.edu.au/childcare-blakehurst/#virtual-tour"><i class="fas fa-video"></i> View Virtual Tour</a>                  
+                  <a class="button button-red" href="/scheduled-a-tour-at-blakehurst-ecc/"><i class="fas fa-walking"></i> Book a Centre Tour</a>
+                  <a class="button" href="tel:0283557777"><i class="fas fa-phone-alt"></i> Call (02) 8355 7777</a>                </div> -->
+                          </div>
+                              <div class="cell home-locations__cell" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+              <a href="#0" class="home-locations__location">
+                                  <div class="home-locations__image">
+                    <img class=" entered pmloaded lazyloaded" data-src="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg" data-srcset="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w" data-sizes="(max-width: 168px) 100vw, 168px" width="168" height="168" sizes="(max-width: 168px) 100vw, 168px" srcset="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg 168w" src="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-coniston-xs.jpg" data-ll-status="loaded">                    <div class="home-locations__pin" style="background-color: rgb(138, 221, 142); opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+
+                  </div>
+                
+                    <div class="home-locations__text" style="background-color: #8add8e;">
+                      bengaluru
+    </div>
+
+              </a>
+
+                              <!-- <div class="home-locations__popup">
+                  <h4 style="color: #8add8e;"><i class="fas fa-map-marker-alt"></i>
+                    Coniston                  </h4>
+                  <p>5 Bridge St, Coniston, Australia</p>                  
+                  <p><strong>Opening Hours</strong><br>7:00am - 6:00pm | Mon-Fri</p>
+                  <a class="button secondary" href="https://www.thrive.edu.au/childcare-coniston/#virtual-tour"><i class="fas fa-video"></i> View Virtual Tour</a>                  
+                  <a class="button button-red" href="/scheduled-a-tour-at-coniston-ecc/"><i class="fas fa-walking"></i> Book a Centre Tour</a>
+                  <a class="button" href="tel:0283557773"><i class="fas fa-phone-alt"></i> Call 02 8355 7773</a>                </div> -->
+                          </div>
+                              <div class="cell home-locations__cell" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+              <a href="#0" class="home-locations__location">
+                                  <div class="home-locations__image">
+                    <img class="lazyloaded entered pmloaded" data-src="https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg" data-srcset="https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w" data-sizes="(max-width: 168px) 100vw, 168px" width="168" height="168" sizes="(max-width: 168px) 100vw, 168px" srcset="https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg 168w" src="https://www.thrive.edu.au/wp-content/uploads/2020/03/home-locations.jpg" data-ll-status="loaded">                    <div class="home-locations__pin" style="background-color: rgb(255, 135, 43); opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+
+                  </div>
+                
+                    <div class="home-locations__text" style="background-color: #ff872b;">
+                      hyderabad
+    </div>
+
+              </a>
+
+                              <!-- <div class="home-locations__popup">
+                  <h4 style="color: #ff872b;"><i class="fas fa-map-marker-alt"></i>
+                    Ermington                  </h4>
+                  <p>144A Marsden Road, Ermington 2115</p>                  
+                  <p><strong>Opening Hours</strong><br>7:00am - 6:00pm | Mon-Fri</p>
+                  <a class="button secondary" href="/ermington-early-learning-centre/#virtual-tour"><i class="fas fa-video"></i> View our 3D tour</a>                  
+                  <a class="button button-red" href="/scheduled-a-tour-at-ermington-ecc/"><i class="fas fa-walking"></i> Book a Centre Tour</a>
+                  <a class="button" href="tel:0283557778"><i class="fas fa-phone-alt"></i> Call 02 8355 7778</a>                </div> -->
+                          </div>
+                              <div class="cell home-locations__cell" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+              <a href="#0" class="home-locations__location">
+                                  <div class="home-locations__image">
+                    <img class="entered pmloaded lazyloaded" data-src="https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg" data-srcset="https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w" data-sizes="(max-width: 168px) 100vw, 168px" width="168" height="168" data-ll-status="loaded" sizes="(max-width: 168px) 100vw, 168px" srcset="https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg 168w" src="https://www.thrive.edu.au/wp-content/uploads/2023/07/Hornsby-map.jpg">                    <div class="home-locations__pin" style="background-color: rgb(157, 124, 196); opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+
+                  </div>
+                
+                    <div class="home-locations__text" style="background-color: #9d7cc4;">
+                      pune
+    </div>
+
+              </a>
+
+                              <!-- <div class="home-locations__popup">
+                  <h4 style="color: #9d7cc4;"><i class="fas fa-map-marker-alt"></i>
+                    Ermington                  </h4>
+                  <p>6-18 Bridge Rd, Hornsby NSW 2077</p>                  
+                  <p><strong>Opening Hours</strong><br>7:00am - 6:00pm | Mon-Fri</p>
+                  <a class="button secondary" href="/childcare-hornsby/#virtual-tour"><i class="fas fa-video"></i> View Virtual Tour</a>                  
+                  <a class="button button-red" href="/scheduled-a-tour-at-hornsby-ecc/"><i class="fas fa-walking"></i> Book a Centre Tour</a>
+                  <a class="button" href="tel:(02)83557771"><i class="fas fa-phone-alt"></i> Call (02) 8355 7771</a>                </div> -->
+                          </div>
+                              <div class="cell home-locations__cell" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+              <a href="#0" class="home-locations__location">
+                                  <div class="home-locations__image">
+                    <img class="entered pmloaded ls-is-cached lazyloaded" data-src="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg" data-srcset="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w" data-sizes="(max-width: 168px) 100vw, 168px" width="168" height="168" data-ll-status="loaded" sizes="(max-width: 168px) 100vw, 168px" srcset="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg 168w" src="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Merrylands-xs.jpg">                    <div class="home-locations__pin" style="background-color: rgb(255, 111, 111); opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+
+                  </div>
+                
+                    <div class="home-locations__text" style="background-color: #ff6f6f;">
+                      chennai
+    </div>
+
+              </a>
+
+                              <!-- <div class="home-locations__popup">
+                  <h4 style="color: #ff6f6f;"><i class="fas fa-map-marker-alt"></i>
+                    Merrylands                  </h4>
+                  <p>1 Mcfarlane Street, Merrylands NSW 2160</p>                  
+                  <p><strong>Opening Hours</strong><br>7:00am - 6:00pm | Mon-Fri</p>
+                  <a class="button secondary" href="https://www.thrive.edu.au/childcare-merrylands/#virtual-tour"><i class="fas fa-video"></i> View Virtual Tour</a>                  
+                  <a class="button button-red" href="/scheduled-a-tour-at-merrylands-ecc/"><i class="fas fa-walking"></i> Book a Centre Tour</a>
+                  <a class="button" href="tel:0283557774"><i class="fas fa-phone-alt"></i> Call (02) 8355 7774</a>                </div> -->
+                          </div>
+                              <div class="cell home-locations__cell" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+              <a href="#0" class="home-locations__location">
+                                  <div class="home-locations__image">
+                    <img class="entered pmloaded ls-is-cached lazyloaded" data-src="https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg" data-srcset="https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w" data-sizes="(max-width: 168px) 100vw, 168px" width="168" height="168" data-ll-status="loaded" sizes="(max-width: 168px) 100vw, 168px" srcset="https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg 168w" src="https://www.thrive.edu.au/wp-content/uploads/2023/06/Mount-druitt-map.jpg">                    <div class="home-locations__pin" style="background-color: rgb(57, 181, 18); opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+
+                  </div>
+                
+                    <div class="home-locations__text" style="background-color: #39b512;">
+                      mumbai
+    </div>
+
+              </a>
+
+                              <!-- <div class="home-locations__popup">
+                  <h4 style="color: #39b512;"><i class="fas fa-map-marker-alt"></i>
+                    Mount Druitt                  </h4>
+                  <p>Mount Druitt</p>                  
+                                    
+                  <a class="button button-red" href="https://www.thrive.edu.au/scheduled-a-tour-at-mount-druitt-ecc/"><i class="fas fa-walking"></i> Book a Centre Tour</a>
+                  <a class="button" href="tel:(02)83557777"><i class="fas fa-phone-alt"></i> Call (02) 8355 7777</a>                </div> -->
+                          </div>
+                              <div class="cell home-locations__cell" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+              <a href="#0" class="home-locations__location">
+                                  <div class="home-locations__image">
+                    <img class="entered pmloaded ls-is-cached lazyloaded" data-src="https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg" data-srcset="https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w" data-sizes="(max-width: 168px) 100vw, 168px" width="168" height="168" data-ll-status="loaded" sizes="(max-width: 168px) 100vw, 168px" srcset="https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg 168w" src="https://www.thrive.edu.au/wp-content/uploads/2023/06/North-gosford-map.jpg">                    <div class="home-locations__pin" style="background-color: rgb(130, 36, 227); opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+
+                  </div>
+                
+                    <div class="home-locations__text" style="background-color: #8224e3;">
+                      kerala
+    </div>
+
+              </a>
+
+                              <!-- <div class="home-locations__popup">
+                  <h4 style="color: #8224e3;"><i class="fas fa-map-marker-alt"></i>
+                    North Gosford                  </h4>
+                  <p>23 Jarrett St, North Gosford NSW 2250</p>                  
+                  <p><strong>Opening Hours</strong><br>6:30am - 6:00pm | Mon-Fri</p>
+                                    
+                  <a class="button button-red" href="https://www.thrive.edu.au/scheduled-a-tour-at-north-gosford-ecc/"><i class="fas fa-walking"></i> Book a Centre Tour</a>
+                  <a class="button" href="tel:(02)83557777"><i class="fas fa-phone-alt"></i> (02) 8355 7777</a>                </div> -->
+                          </div>
+                              <div class="cell home-locations__cell" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+              <a href="#0" class="home-locations__location">
+                                  <div class="home-locations__image">
+                    <img class="entered pmloaded ls-is-cached lazyloaded" data-src="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg" data-srcset="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w" data-sizes="(max-width: 168px) 100vw, 168px" width="168" height="168" data-ll-status="loaded" sizes="(max-width: 168px) 100vw, 168px" srcset="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg 168w" src="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-North-Ryde-xs.jpg">                    <div class="home-locations__pin" style="background-color: rgb(63, 133, 234); opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+
+                  </div>
+                
+                    <div class="home-locations__text" style="background-color: #3f85ea;">
+                      Visakhapatnam
+    </div>
+
+              </a>
+
+                              <!-- <div class="home-locations__popup">
+                  <h4 style="color: #3f85ea;"><i class="fas fa-map-marker-alt"></i>
+                    North Ryde                  </h4>
+                  <p>123 Epping Rd, North Ryde, NSW, 2113</p>                  
+                  <p><strong>Opening Hours</strong><br>7:00am - 6:00pm | Mon-Fri</p>
+                  <a class="button secondary" href="https://www.thrive.edu.au/childcare-north-ryde/#virtual-tour"><i class="fas fa-video"></i> View Virtual Tour</a>                  
+                  <a class="button button-red" href="/scheduled-a-tour-at-north-ryde-ecc/"><i class="fas fa-walking"></i> Book a Centre Tour</a>
+                  <a class="button" href="tel:0283557777"><i class="fas fa-phone-alt"></i> Call (02) 8355 7777</a>                </div> -->
+                          </div>
+                              <div class="cell home-locations__cell" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+              <a href="#0" class="home-locations__location">
+                                  <div class="home-locations__image">
+                    <img class="entered pmloaded ls-is-cached lazyloaded" data-src="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg" data-srcset="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w" data-sizes="(max-width: 168px) 100vw, 168px" width="168" height="168" data-ll-status="loaded" sizes="(max-width: 168px) 100vw, 168px" srcset="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg 168w" src="https://www.thrive.edu.au/wp-content/uploads/2020/03/Map-Pyrmont-xs.jpg">                    <div class="home-locations__pin" style="background-color: rgb(70, 73, 158); opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+
+                  </div>
+                
+                    <div class="home-locations__text" style="background-color: #46499e;">
+                      coimbatore
+    </div>
+
+              </a>
+
+                              <!-- <div class="home-locations__popup">
+                  <h4 style="color: #46499e;"><i class="fas fa-map-marker-alt"></i>
+                    Pyrmont                  </h4>
+                  <p>132 Bank street Pyrmont NSW 2009</p>                  
+                  <p><strong>Opening Hours</strong><br>7:30am - 6:30pm | Mon-Fri</p>
+                  <a class="button secondary" href="/childcare-pyrmont/#virtual-tour"><i class="fas fa-video"></i> View Virtual Tour</a>                  
+                  <a class="button button-red" href="/scheduled-a-tour-at-pyrmont-ecc/"><i class="fas fa-walking"></i> Book a Centre Tour</a>
+                  <a class="button" href="tel:(02)95184033"><i class="fas fa-phone-alt"></i> Call (02) 9518 4033</a>                </div> -->
+                          </div>
+                              <div class="cell home-locations__cell" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+              <a href="#0" class="home-locations__location">
+                                  <div class="home-locations__image">
+                    <img class="entered pmloaded ls-is-cached lazyloaded" data-src="https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg" data-srcset="https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w" data-sizes="(max-width: 168px) 100vw, 168px" width="168" height="168" data-ll-status="loaded" sizes="(max-width: 168px) 100vw, 168px" srcset="https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w,https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg 168w" src="https://www.thrive.edu.au/wp-content/uploads/2022/08/thrive-rosehill-map-small.jpg">                    <div class="home-locations__pin" style="background-color: rgb(157, 124, 196); opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+
+                  </div>
+                
+                    <div class="home-locations__text" style="background-color: #9d7cc4;">
+       Mysore
+    </div>
+
+              </a>
+                        </div>
+                        <a class="button button-red parents-popup-form-btn" onclick="openPopup()">Discover all 60+ locations</a>
+
+    </div>
+  </section>
+	
+ <div class="background">
+  <div class="overlay"></div>
+        <div class="content">
+            <h1 class="prefect-head">The Perfect First Step on <br> Their Lifelong Learning Journey</h1>
+            <p class="perfect-paragraph">We carefully select only the most experienced and qualified staff, ensuring your child receives <br> the best care and education. During your tour, you'll meet our team and see how our program <br> promotes growth in all areas of development. Our curriculum encourages social skills, teamwork, <br> and  creativity through play, preparing your child for a successful future.</p>
+            <a class="button button-red parents-popup-form-btn" onclick="openPopup()">Book Your Free Tour</a>
+          </div>
+    </div>
+
+
+  <!--  -->
+ 
+	<!--  -->
+
+  <div class="loading-sec">
+    <h2 class="book-head">Book a Free Tour at a T.I.M.E <br> Kids Preschool NOW</h2>
+  </div>
+  <section class="section home-first-step lazyload" style="padding-top: 0px;">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x align-middle">
+        <div class="cell large-6 home-first-step__content">
+<p class="book-paragraph">T.I.M.E Kids’ preschools are currently accepting new enrollments, but spaces are filling up fast! We encourage you to book a tour of your nearest center to learn more about our curriculum, facilities, and how we can support your child’s growth.</p>
+<p class="book-paragraph"> Our staff will make you feel at home and help you understand why T.I.M.E Kids is the best choice for your child’s early education. Simply fill out the form and click the link below to set up your tour NOW!</p>
+<p>
+  <!-- <a class="button hollow" href="https://www.thrive.edu.au/about-us/">Read More</a>  -->
+  <a class="button secondary parents-popup-form-btn" onclick="openPopup()">Book Your Free Tour</a></p>
+        </div>
+        <div class="cell large-6 home-first-step__cta">
+          <img src="images/game.jpg" style="border-radius: 30px;width: 450px;" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+	
+
+  <section class="section home-3d-tour lazyloaded is-active" data-bgset="images/bg-slide.jpg [(max-width: 640px)] | images/bg-slide.jpg [(max-width: 768px)] | images/bg-slide.jpg [(max-width: 1024px)] | images/bg-slide.jpg" style="background-image: url(&quot;images/bg-slide.jpg&quot;);">
+    <div class="home-3d-tour__bg">
+      <div class="grid-container fluid">
+        <div class="grid-x grid-padding-x align-middle">
+          <div class="cell medium-10 medium-offset-1 large-6 large-offset-6 home-3d-tour__content">
+            <div class="home-3d-tour__inner" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+              <h2>Give Your Children The Most Socially, Academically And Physically Healthy Daycare</h2>
+<p>Thrive’s early learning centres are currently open for new enrolments. Naturally, spots are filling FAST. So we invite you to book a tour of your nearest centre now.</p>
+<p><a class="button secondary-new" href="#0"><i class="fa fa-video-camera"></i> View our virtual tour</a></p>
+            </div>
+                          <div class="home-3d-tour__outer-gallery add-lightbox" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                <div class="owl-carousel owl-theme owl-loaded owl-drag">
+     
+                                  <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1652px, 0px, 0px); transition: all 0.7s ease 0s; width: 2479px;"><div class="owl-item cloned" style="width: 156.533px; margin-right: 50px;"><div>
+                      <a href="/images/g-1.jpg">
+                        <div class="home-3d-tour__single-gallery lazyloaded" data-bg="/images/g-1.jpg" style="background-image: url(&quot;/images/g-1.jpg&quot;);"></div>
+                      </a>
+                    </div></div><div class="owl-item cloned" style="width: 156.533px; margin-right: 50px;"><div>
+                      <a href="/images/g-2.jpg">
+                        <div class="home-3d-tour__single-gallery lazyloaded" data-bg="/images/g-2.jpg" style="background-image: url(&quot;/images/g-2.jpg&quot;);"></div>
+                      </a>
+                    </div></div>
+                    <div class="owl-item cloned" style="width: 156.533px; margin-right: 50px;"><div>
+                      <a href="/images/g-3.jpg">
+                        <div class="home-3d-tour__single-gallery lazyloaded" data-bg="/images/g-3.jpg" style="background-image: url(&quot;/images/g-3.jpg&quot;);"></div>
+                      </a>
+                    </div></div><div class="owl-item cloned" style="width: 156.533px; margin-right: 50px;"><div>
+                      <a href="/images/g-4.jpg">
+                        <div class="home-3d-tour__single-gallery lazyloaded" data-bg="/images/g-4.jpg" style="background-image: url(&quot;/images/g-4.jpg&quot;);"></div>
+                      </a>
+                    </div></div><div class="owl-item" style="width: 156.533px; margin-right: 50px;"><div>
+                      <a href="/images/g-5.jpg">
+                        <div class="home-3d-tour__single-gallery lazyloaded" data-bg="/images/g-5.jpg" style="background-image: url(&quot;/images/g-5.jpg&quot;);"></div>
+                      </a>
+                    </div></div><div class="owl-item" style="width: 156.533px; margin-right: 50px;"><div>
+                      <a href="/images/g-6.jpg">
+                        <div class="home-3d-tour__single-gallery lazyloaded" data-bg="/images/g-6.jpg" style="background-image: url(&quot;/images/g-6.jpg&quot;);"></div>
+                      </a>
+                    </div></div><div class="owl-item" style="width: 156.533px; margin-right: 50px;"><div>
+                      <a href="/images/g-7.jpg">
+                        <div class="home-3d-tour__single-gallery lazyloaded" data-bg="/images/g-7.jpg" style="background-image: url(&quot;/images/g-7.jpg&quot;);"></div>
+                      </a>
+                    </div></div><div class="owl-item" style="width: 156.533px; margin-right: 50px;"><div>
+                      <a href="/images/g-8.jpg">
+                        <div class="home-3d-tour__single-gallery lazyloaded" data-bg="/images/g-8.jpg" style="background-image: url(&quot;/images/g-8.jpg&quot;);"></div>
+                      </a>
+                    </div></div><div class="owl-item" style="width: 156.533px; margin-right: 50px;"><div>
+                      <a href="/images/g-9.jpg">
+                        <div class="home-3d-tour__single-gallery lazyloaded" data-bg="/images/g-9.jpg" style="background-image: url(&quot;/images/g-9.jpg&quot;);"></div>
+                      </a>
+                    </div></div><div class="owl-item active" style="width: 156.533px; margin-right: 50px;"><div>
+                      <a href="/images/g-10.jpg">
+                        <div class="home-3d-tour__single-gallery lazyloaded" data-bg="/images/g-10.jpg" style="background-image: url(&quot;/images/g-10.jpg&quot;);"></div>
+                      </a>
+                    </div></div>
+                  </div></div>
+                    <!-- <div class="owl-nav">
+                      <button type="button" role="presentation" class="owl-prev">
+                        <i class="fa fa-angle-left"></i></button>
+                        <button type="button" role="presentation" class="owl-next"><i class="fa fa-angle-right"></i></button>
+                      </div> -->
+                      <div class="owl-dots disabled">
+
+                      </div></div>
+              </div>
+                      </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+  <div class="loading-sec">
+    <h2 class="what-head">What our parents think</h2>
+  </div>
+	  <section class="section home-testimonials lazyload">
+    <div class="home-testimonials__bg">
+      <div class="grid-container">
+        <div class="grid-x grid-padding-x align-middle">
+          <div class="cell medium-12 large-12 large-offset-0 home-testimonials__content">
+                          <div class="home-testimonials__outer-gallery carousel-loading">
+                <div class="owl-carousel owl-theme">
+                                      <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">
+                       
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Arjun Patel</h3>
+<p class="text-short">Joining T.I.M.E. Kids has been transformative. The curriculum is well-researched, and the support from the head office is commendable. We've seen great returns with low initial investment. Highly recommended for aspiring preschool owners!</p>
+                        </div>
+                      </div>
+                    </div>
+                   <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">
+                      
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Rohan Mehta</h3>
+<p class="text-short">Our experience with T.I.M.E. Kids has been wonderful. The franchise offers extensive support, from curriculum development to marketing strategies. It's a well-rounded opportunity for anyone looking to venture into the preschool business.</p>
+                        </div>
+                      </div>
+                    </div>
+                 <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">
+                      ]
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Anjali Singh</h3>
+<p class="text-short">Partnering with T.I.M.E. Kids has been a game-changer. The curriculum is excellent, and the support from the head office is unwavering. The franchise offers great returns with minimal investment</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Neha Gupta</h3>
+<p class="text-short">Since partnering with T.I.M.E. Kids, our preschool has flourished. The academic support and continuous training have been invaluable. The low investment and high returns make it an excellent choice for new franchisees</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">                      
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Akash Verma</h3>
+<p class="text-short">TIME Kids' robust curriculum and -* have made running a preschool seamless. The training programs and marketing assistance have been instrumental in our success. Highly recommend this franchise for its quality and dedication. </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">                     
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Shalini Rao</h3>
+<p class="text-short">The support from T.I.M.E. Kids is exceptional. Their curriculum is innovative and engaging, and the training programs are thorough. Our preschool has thrived under their guidance, making this franchise a great investment.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">                      
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Vikram Nair</h3>
+<p class="text-short">T.I.M.E. Kids provides comprehensive support, from curriculum design to marketing. The training and continuous updates ensure our preschool operates smoothly. It's a rewarding experience with significant returns.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">                      
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Manish Kumar</h3>
+<p class="text-short">Our journey with T.I.M.E. Kids has been remarkable. The curriculum and training programs are top-notch, and the support from the franchise is outstanding. A highly rewarding investment opportunity.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">                     
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;"> Kavita Joshi</h3>
+<p class="text-short">T.I.M.E. Kids offers an exceptional preschool franchise. The curriculum is well-designed, and the support is comprehensive. The low investment and high returns make it an ideal choice for new franchisees</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">                    
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Rajesh Thakur</h3>
+<p class="text-short">The T.I.M.E. Kids franchise has been a fantastic investment. The curriculum is thorough, and the support from the head office is continuous. It's a great opportunity with excellent returns. </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">                 
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Sneha Roy 🌟</h3>
+<p class="text-short">Joining T.I.M.E. Kids has been a rewarding experience. The curriculum is engaging, and the support is outstanding. The franchise offers significant returns with minimal investment, making it a top choice.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">                     
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Anjali Singh</h3>
+<p class="text-short">Partnering with T.I.M.E. Kids has been a game-changer. The curriculum is excellent, and the support from the head office is unwavering. The franchise offers great returns with minimal investment</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">                     
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Anjali Singh</h3>
+<p class="text-short">Partnering with T.I.M.E. Kids has been a game-changer. The curriculum is excellent, and the support from the head office is unwavering. The franchise offers great returns with minimal investment</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">                      
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Anjali Singh</h3>
+<p class="text-short">Partnering with T.I.M.E. Kids has been a game-changer. The curriculum is excellent, and the support from the head office is unwavering. The franchise offers great returns with minimal investment</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">                   
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Anjali Singh</h3>
+<p class="text-short">Partnering with T.I.M.E. Kids has been a game-changer. The curriculum is excellent, and the support from the head office is unwavering. The franchise offers great returns with minimal investment</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">                    
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Anjali Singh</h3>
+<p class="text-short">Partnering with T.I.M.E. Kids has been a game-changer. The curriculum is excellent, and the support from the head office is unwavering. The franchise offers great returns with minimal investment</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">                     
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Anjali Singh</h3>
+<p class="text-short">Partnering with T.I.M.E. Kids has been a game-changer. The curriculum is excellent, and the support from the head office is unwavering. The franchise offers great returns with minimal investment</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">
+                     
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Anjali Singh</h3>
+<p class="text-short">Partnering with T.I.M.E. Kids has been a game-changer. The curriculum is excellent, and the support from the head office is unwavering. The franchise offers great returns with minimal investment</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div class="grid-x align-middle home-testimonials__inner-testimonial">
+                       
+                        <div class="cell large-12 home-testimonials__testimonial">
+                          <i class="fa fa-quote-left"></i>
+                          <h3 style="font-size: 40px;">Anjali Singh</h3>
+<p class="text-short">Partnering with T.I.M.E. Kids has been a game-changer. The curriculum is excellent, and the support from the head office is unwavering. The franchise offers great returns with minimal investment</p>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  -->
+  <!--  -->
+<div class="unique-video-section">
+  <div id="unique-main-video-container" class="unique-main-video-container">
+      <video id="unique-main-video" controls poster="/video/Parent-1.png"></video>
+      <div class="unique-overlay-black"></div>
+      <div class="unique-play-icon" id="unique-play-icon">&#9658;</div>
+      <div class="unique-heading">HARIKA KYPURAM - HAPPY PARENT</div>
+      <div class="unique-paragraph">DOMALGUDA - HYDERABAD</div>
+  </div>
+  <div class="unique-thumbnail-container">
+      <div class="unique-thumbnail" onclick="uniqueLoadVideo('/video/Parent-1.mp4', '/video/Parent-1.png', 'DOMALGUDA - HYDERABAD', '“HARIKA KYPURAM - HAPPY PARENT”')">
+          <img src="/video/Parent-1.png" alt="Thumbnail 1">
+          <div class="unique-thumbnail-play-icon">&#9658;</div>
+          <div class="unique-thumbnail-caption">DOMALGUDA - HYDERABAD</div>
+      </div>
+      <div class="unique-thumbnail" onclick="uniqueLoadVideo('/video/Parent-2.mp4', '/video/Parent-2.png', 'KHARADI - PUNE', '“RANJAN DUBEY - HAPPY PARENT')">
+          <img src="/video/Parent-2.png" alt="Thumbnail 2">
+          <div class="unique-thumbnail-play-icon">&#9658;</div>
+          <div class="unique-thumbnail-caption">KHARADI - PUNE</div>
+      </div>
+      <div class="unique-thumbnail" onclick="uniqueLoadVideo('/video/Parent-3.mp4', '/video/Parent-3.png', 'PADMARAO NAGAR - HYDERABAD', '“PRATHIBA ANJAN - HAPPY PARENT')">
+          <img src="/video/Parent-3.png" alt="Thumbnail 3">
+          <div class="unique-thumbnail-play-icon">&#9658;</div>
+          <div class="unique-thumbnail-caption">PADMARAO NAGAR - HYDERABAD</div>
+      </div>
+      <div class="unique-thumbnail" onclick="uniqueLoadVideo('/video/Parent-4.mp4', '/video/Parent-4.png', 'DOMALGUDA - HYDERABAD', '“VIDHI VARINDANI - HAPPY PARENT')">
+        <img src="/video/Parent-4.png" alt="Thumbnail 3">
+        <div class="unique-thumbnail-play-icon">&#9658;</div>
+        <div class="unique-thumbnail-caption">DOMALGUDA - HYDERABAD</div>
+    </div>
+  </div>
+</div>
+<div class="unique-overlay" id="unique-overlay">
+  <span class="unique-close-icon" id="unique-close-icon">&times;</span>
+  <video id="unique-overlay-video" controls></video>
+</div>
+<!--  -->
+
+
+
+
+
+<div class="formnew" style="margin-top: 50px;">
+  <form class="form" action="mail.php" method="post" autocomplete="off">
+
+    <label class="labelnew" for="name">Your Name</label>
+    <input class="input" type="text" name="name" placeholder="Your Name" required>
+  
+    <label class="labelnew" for="email">Email</label>
+    <input class="input" type="email" name="email" placeholder="Email" required>
+
+    <label class="labelnew" for="number">Number</label>
+    <input class="number" type="tel" name="number" placeholder="Number" style="width: 100%;border: 1px solid #ccc;" required>
+  
+    <label class="labelnew" for="message">Message</label>
+    <textarea class="textarea" name="message" placeholder="Message"></textarea>
+  
+    <input class="buttonnew" type="submit" value="Submit">
+  
+</form>
+</div>
+
+
+
+
+<section class="section home-aoc" style="padding-bottom: 50px;background: #fff;"> 
+  <p><strong style="color: #000;font-size: 32px;font: italic;">Shaping the Future, One Child at a Time</strong></p>
+</section>
+
+
+
+<div id="wrapper" class="ban" style="position: relative;">
+  <section id="content-homepage">
+<!-- end #wrapper -->
+<div class="footer-images desert-flavour">
+  <div id="cloudfooter3" class="wow bounceInUp" data-wow-duration="2s" data-wow-delay="5s">
+     <img src="images/cloud1.png" alt="Cloud">
+  </div>
+  <div id="cloudfooter4"  class="animated" data-fx="bounceInDown" data-time="2400">
+     <img src="images/cloud2.png" alt="Cloud">
+  </div>
+  <div id="fill1" class="animated" data-fx="fadeInUp"></div>
+  <div id="fill2" class="animated" data-fx="fadeInUp"></div>
+  <div id="hill2" class="animated" data-fx="bounceInLeft">
+     <img src="images/grasshill.png" alt="hill image">
+  </div>
+  <div id="lake" class="wow bounceInLeft"></div>
+  <div id="flavour3tree1" class="wow bounceInRight" data-fx="fadeInUp">
+     <img src="images/deserttree3.png" alt="Tree" class="animated" data-fx="bounceInDown" data-time="400">
+  </div>
+  <div id="flavour3tree2" class="wow bounceInTop" data-fx="fadeInUp">
+     <img src="images/deserttree5.png" alt="Tree" class="animated" data-fx="bounceInDown" data-time="600">
+  </div>
+  <div id="flavour3tree3" class="wow bounceInBottom" data-fx="fadeInUp">
+     <img src="images/deserttree2.png" alt="Tree" class="animated" data-fx="bounceInDown" data-time="800">
+  </div>
+  <div id="flavour3tree4" class="animated" data-fx="fadeInUp">
+     <img src="images/deserttree4.png" alt="Tree" class="animated" data-fx="bounceInDown" data-time="1000">
+  </div>
+  <div id="flavour3tree5" class="wow bounceInRight " data-fx="bounceInDown" data-time="1200">
+     <img src="images/gallery.png" alt="Tree" class="animated" data-fx="bounceInDown" data-time="1200">
+  </div>
+  <div id="flavour3tree6" class="animated" data-fx="fadeInUp">
+     <img src="images/deserttree1.png" alt="Tree" class="animated" data-fx="bounceInDown" data-time="1400">
+  </div>
+  <div id="giraffe" class="wow bounceInLeft" data-fx="fadeInUp">
+     <img src="images/giraffe.png" alt="Giraffe" class="animated" data-fx="bounceInDown" data-time="2000">
+  </div>
+  <div id="lion" class="wow bounceInRight" data-fx="fadeInUp">
+     <img src="images/lion.png" alt="Lion" class="animated" data-fx="bounceInDown" data-time="2000">
+  </div>
+  <div id="crocodile" class="animated" data-fx="fadeInUp">
+     <img src="images/crocodile.png" alt="Crocodile" class="animated" data-fx="bounceInDown" data-time="2400">
+  </div>
+</div>
+	<section class="section home-aoc">
+	</section>
+
+		<!-- popup -->
+    <div class="parents-popup-overlay" id="parents-popup-overlay" onclick="closePopup()"></div>
+
+    <div class="parents-popup-form-container" id="parents-popup-form">
+        <button class="close-btn" onclick="closePopup()">&times;</button>
+        <form action="mail.php" method="post" autocomplete="off">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="number">Number</label>
+                <input type="tel" name="number" placeholder="Number" style="width: 100%;border: 1px solid #ccc;" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" placeholder="Message"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+<footer class="footer-container lazyload">
+	
+
+	<div class="grid-container">
+
+		<div class="grid-x grid-padding-x large-up-4 medium-up-2 footer-columns">
+			
+													<div class="small-order-2 medium-order-1 cell">
+						<ul class="vertical menu accordion-menu footer-menu" data-accordion-menu="" data-submenu-toggle="true">
+<li><a href="#">Times Pre School</a>
+<ul>
+<li>T.I.M.E. Since 32 years has shaped careers of more than 2.6 million students. Our commitment to quality course content, teaching methodology and access to resources has helped in achieving this leadership position.</li>
+<!-- <li><a class="button footer-button-tour" href="https://www.thrive.edu.au/book-tour/"><i class="fas fa-walking"></i> Book A Tour</a></li> -->
+</ul>
+</li>
+</ul>
+					</div>
+													<div class="small-order-3 medium-order-2 cell">
+						<ul class="vertical menu accordion-menu footer-menu" data-accordion-menu="" data-submenu-toggle="true">
+<li><a href="#">Main Links</a>
+<ul>
+<li><a href="#0"><i class="fa fa-angle-double-right"></i> About us</a></li>
+<li><a href="#0"><i class="fa fa-angle-double-right"></i> Franchise Opportunity</a></li>
+<li><a href="#0"><i class="fa fa-angle-double-right"></i> Parent Guidelines</a></li>
+<li><a href="#0"><i class="fa fa-angle-double-right"></i> Media</a></li>
+<li><a href="#0"><i class="fa fa-angle-double-right"></i> FAQ's</a></li>
+<!-- <li><a href="https://www.thrive.edu.au/ccs-updates/"><i class="fa fa-angle-double-right"></i> Careers</a></li> -->
+<!-- <li><a class="button button-footer-subsidy-calculator" href="https://www.humanservices.gov.au/customer/dhs/centrelink" target="_blank" rel="noopener"><i class="fas fa-calculator"></i> Subsidy Calculator</a></li> -->
+</ul>
+</li>
+          
+</ul>
+					</div>
+													<div class="small-order-4 medium-order-3 cell">
+						<ul class="vertical menu accordion-menu footer-menu" data-accordion-menu="" data-submenu-toggle="true">
+<li><a href="#">Quick Links</a>
+<ul>
+<li><a href="#0"><i class="fa fa-angle-double-right"></i> Our Programme</a></li>
+<li><a href="#0"><i class="fa fa-angle-double-right"></i> Our Infrastructure</a></li>
+<!-- <li><a href="https://www.thrive.edu.au/childcare-coniston/"><i class="fa fa-angle-double-right"></i> Our Teachers</a></li> -->
+<li><a href="#0"><i class="fa fa-angle-double-right"></i> Our Curriculum</a></li>
+<li><a href="#0"><i class="fa fa-angle-double-right"></i> Our Strengths</a></li>
+<li><a href="#0"><i class="fa fa-angle-double-right"></i> Our Programs</a></li>
+</ul>
+</li>
+</ul>
+
+					</div>
+				
+				<div class="small-order-1 medium-order-4 cell footer-logo-cta">
+					<a class="footer-logo-cta__logo" href="#0" rel="home">
+            <img width="211" height="82" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20width=&#039;211&#039;%20height=&#039;82&#039;%20viewBox=&#039;0%200%20211%2082&#039;%3E%3C/svg%3E" alt="Times Pre School Early Learning centres" class="perfmatters-lazy" data-src="images/TK Logo's BW.png" />
+            <noscript><img width="211" height="82" src="images/TK Logo's BW.png" alt="Times Pre School Early Learning centres"></noscript></a>
+					
+						<p class="footer-logo-cta__title">Social Media</p>
+
+													<!-- <p><a class="footer-logo-cta__phone" href="tel:0283557777">P: 02 8355 7777</a></p> -->
+																									<div class="footer-social">
+																	<a target="_blank" href="https://www.facebook.com/pages/TIME-Kids/187099544682886"><i class="fa fa-facebook"></i></a>
+																	<a target="_blank" href="https://www.youtube.com/channel/UCK7OLgkRrC1DbWJ7wXjPZDA"><i class="fa fa-youtube"></i></a>
+																	<!-- <a target="_blank" href="https://au.linkedin.com/company/thrive-early-learning-centres"><i class="fab fa-linkedin"></i></a> -->
+															</div>
+						
+
+										<!-- <img width="600" height="285" class="localb perfmatters-lazy" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20width=&#039;600&#039;%20height=&#039;285&#039;%20viewBox=&#039;0%200%20600%20285&#039;%3E%3C/svg%3E" data-src="https://www.thrive.edu.au/wp-content/themes/foundation/dist/assets/images/Localbusiness-awards.jpg" /><noscript>
+                      <img width="600" height="285" class="localb" src="https://www.thrive.edu.au/wp-content/themes/foundation/dist/assets/images/Localbusiness-awards.jpg" /></noscript> -->
+				</div>
+					</div>
+		<div class="grid-x grid-padding-x copy-services align-middle">
+			<div class="small-12 medium-8 large-12 cell">
+				<p class="copyright text-center">Copyright &copy; 2024 Times Pre School. All Rights Reserved. </p>
+			</div>
+					</div>
+	</div>
+</footer>
+
+<script type="text/javascript" src="js/app.js" id="foundation-js"></script>
+<script type="text/javascript" src="js/animation.js" id="animation-js"></script>
+<script src="js/jquery-1.10.1.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>	
+<script type="text/javascript" id="perfmatters-lazy-load-js-before">
+/* <![CDATA[ */
+window.lazyLoadOptions={elements_selector:"img[data-src],.perfmatters-lazy,.perfmatters-lazy-css-bg",thresholds:"0px 0px",class_loading:"pmloading",class_loaded:"pmloaded",callback_loaded:function(element){if(element.tagName==="IFRAME"){if(element.classList.contains("pmloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener("LazyLoad::Initialized",function(e){var lazyLoadInstance=e.detail.instance;var target=document.querySelector("body");var observer=new MutationObserver(function(mutations){lazyLoadInstance.update()});var config={childList:!0,subtree:!0};observer.observe(target,config);});
+/* ]]> */
+</script>
+<script type="text/javascript" async src="js/lazyload.min.js" id="perfmatters-lazy-load-js"></script>
+
+
+<script>
+  WebFontConfig = {
+    google: {
+      families: ["Fredoka+One", "Montserrat:400,600,800"]
+    }
+  };
+  (function() {
+    var wf = document.createElement("script");
+    wf.src =
+      ("https:" == document.location.protocol ? "https" : "http") +
+      "://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js";
+    wf.type = "text/javascript";
+    wf.async = "true";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+<script>
+  // Get the current date
+  const today = new Date();
+  const options = {  month: 'long', day: 'numeric' };
+  const currentDate = today.toLocaleDateString(undefined, options);
+
+  // Insert the current date into the span
+  document.getElementById('current-date').innerText = currentDate;
+</script>
+<script>
+  function uniqueLoadVideo(videoSrc, posterSrc, name, heading) {
+      const mainVideo = document.getElementById('unique-main-video');
+      const playIcon = document.getElementById('unique-play-icon');
+      const mainHeading = document.querySelector('.unique-heading');
+      const mainParagraph = document.querySelector('.unique-paragraph');
+      
+      mainVideo.src = videoSrc;
+      mainVideo.poster = posterSrc;
+      mainVideo.load();
+      playIcon.style.display = 'block';
+      mainHeading.textContent = heading;
+      mainParagraph.textContent = name;
+  }
+
+  document.getElementById('unique-main-video-container').addEventListener('click', function() {
+      const overlay = document.getElementById('unique-overlay');
+      const overlayVideo = document.getElementById('unique-overlay-video');
+      const mainVideo = document.getElementById('unique-main-video');
+      
+      overlayVideo.src = mainVideo.src;
+      overlay.style.display = 'flex';
+      overlayVideo.play();
+  });
+
+  document.getElementById('unique-close-icon').addEventListener('click', function() {
+      const overlay = document.getElementById('unique-overlay');
+      const overlayVideo = document.getElementById('unique-overlay-video');
+      overlayVideo.pause();
+      overlay.style.display = 'none';
+  });
+
+  document.getElementById('unique-main-video').addEventListener('play', function() {
+      const playIcon = document.getElementById('unique-play-icon');
+      playIcon.style.display = 'none';
+  });
+
+  // Load the first video on page load
+  window.onload = function() {
+      uniqueLoadVideo('/video/Parent-1.mp4', '/video/Parent-1.png', 'DOMALGUDA - HYDERABAD', '“HARIKA KYPURAM - HAPPY PARENT”');
+  };
+</script>
+<!-- testimonial slider -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- <script>
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+            items: 1
+        });
+    });
+</script> -->
+<!--  -->
+<!-- popup -->
+<script>
+  function openPopup() {
+      document.getElementById('parents-popup-form').style.display = 'block';
+      document.getElementById('parents-popup-overlay').style.display = 'block';
+  }
+
+  function closePopup() {
+      document.getElementById('parents-popup-form').style.display = 'none';
+      document.getElementById('parents-popup-overlay').style.display = 'none';
+  }
+</script>
+</body>
+</html>

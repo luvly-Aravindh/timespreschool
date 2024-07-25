@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Slider</title>
+    <style>
+        .franchise-group {
+            width: 100%;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .testimonial-slider-wrapper {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial-card {
+            flex: 1 0 25%; /* Show 4 cards at a time */
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .testimonial-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-description {
+            font-size: 16px;
+        }
+
+        @media (max-width: 1200px) {
+            .testimonial-card {
+                flex: 1 0 33.33%; /* Show 3 cards at a time */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-card {
+                flex: 1 0 50%; /* Show 2 cards at a time */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonial-card {
+                flex: 1 0 100%; /* Show 1 card at a time */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="franchise-group">
+        <div class="testimonial-slider-wrapper">
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <img src="images/Instagram/Instagram 16.svg" alt="Profile Image" class="testimonial-image">
+                    <div class="testimonial-name">Adriana</div>
+                    <div class="testimonial-description">Very happy thanks to the team for all the help. The fact that everything is constant now in business is more than I could have ever wished for...</div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://via.placeholder.com/100" alt="Profile Image" class="testimonial-image">
+                    <div class="testimonial-name">Loredana</div>
+                    <div class="testimonial-description">So initially I saw a lot of ads from them on Instagram, Facebook, YouTube, etc. and I said if I can do this for them, I should...</div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://via.placeholder.com/100" alt="Profile Image" class="testimonial-image">
+                    <div class="testimonial-name">Livius</div>
+                    <div class="testimonial-description">Quality leads that converted well. I generally get 10-20% conversion rate on calls, but with them it's 40-60%. It's crazy.</div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://via.placeholder.com/100" alt="Profile Image" class="testimonial-image">
+                    <div class="testimonial-name">They work</div>
+                    <div class="testimonial-description">They exceeded expectations. Quality leads. I am very happy with everything from Leads Leads. Recommend.</div>
+                </div>
+                <!-- Repeat testimonials to create an infinite loop -->
+                <div class="testimonial-card">
+                    <img src="https://via.placeholder.com/100" alt="Profile Image" class="testimonial-image">
+                    <div class="testimonial-name">Adriana</div>
+                    <div class="testimonial-description">Very happy thanks to the team for all the help. The fact that everything is constant now in business is more than I could have ever wished for...</div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://via.placeholder.com/100" alt="Profile Image" class="testimonial-image">
+                    <div class="testimonial-name">Loredana</div>
+                    <div class="testimonial-description">So initially I saw a lot of ads from them on Instagram, Facebook, YouTube, etc. and I said if I can do this for them, I should...</div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://via.placeholder.com/100" alt="Profile Image" class="testimonial-image">
+                    <div class="testimonial-name">Livius</div>
+                    <div class="testimonial-description">Quality leads that converted well. I generally get 10-20% conversion rate on calls, but with them it's 40-60%. It's crazy.</div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://via.placeholder.com/100" alt="Profile Image" class="testimonial-image">
+                    <div class="testimonial-name">They work</div>
+                    <div class="testimonial-description">They exceeded expectations. Quality leads. I am very happy with everything from Leads Leads. Recommend.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentIndex = 0;
+        const testimonialSlider = document.querySelector('.testimonial-slider');
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        const totalTestimonials = testimonials.length / 2; // Adjust for duplicated testimonials for infinite loop
+
+        function slideTestimonials() {
+            currentIndex++;
+            if (currentIndex >= totalTestimonials) {
+                testimonialSlider.style.transition = 'none';
+                testimonialSlider.style.transform = 'translateX(0)';
+                currentIndex = 0;
+                setTimeout(() => {
+                    testimonialSlider.style.transition = 'transform 0.5s ease-in-out';
+                    testimonialSlider.style.transform = `translateX(-${currentIndex * 100 / 4}%)`;
+                    currentIndex++;
+                }, 50);
+            } else {
+                testimonialSlider.style.transform = `translateX(-${currentIndex * 100 / 4}%)`;
+            }
+        }
+
+        setInterval(slideTestimonials, 3000); // Slide every 3 seconds
+
+        testimonialSlider.addEventListener('transitionend', () => {
+            if (currentIndex === 0) {
+                testimonialSlider.style.transition = 'none';
+                testimonialSlider.style.transform = 'translateX(0)';
+                setTimeout(() => {
+                    testimonialSlider.style.transition = 'transform 0.5s ease-in-out';
+                    testimonialSlider.style.transform = `translateX(-${currentIndex * 100 / 4}%)`;
+                }, 50);
+            }
+        });
+    </script>
+</body>
+</html>

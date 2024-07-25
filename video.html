@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .unique-video-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .unique-main-video-container {
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .unique-main-video-container video {
+            width: 100%;
+            height: auto;
+        }
+
+        .unique-main-video-container .unique-overlay-black {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+            z-index: 5;
+        }
+
+        .unique-main-video-container .unique-play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            color: #fff;
+            background: #ffcc00;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 20px #ffcc00;
+            animation: unique-glow 1s infinite;
+            z-index: 10;
+        }
+
+        .unique-main-video-container .unique-heading,
+        .unique-main-video-container .unique-paragraph {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .unique-main-video-container .unique-heading {
+            top: 30%;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .unique-main-video-container .unique-paragraph {
+            top: 40%;
+            font-size: 18px;
+        }
+
+        @keyframes unique-glow {
+            0% {
+                box-shadow: 0 0 5px #ffcc00;
+            }
+            50% {
+                box-shadow: 0 0 20px #ffcc00;
+            }
+            100% {
+                box-shadow: 0 0 5px #ffcc00;
+            }
+        }
+
+        .unique-thumbnail-container {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .unique-thumbnail {
+            width: 200px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .unique-thumbnail img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .unique-thumbnail:hover {
+            transform: scale(1.05);
+        }
+
+        .unique-thumbnail .unique-thumbnail-play-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+        .unique-thumbnail .unique-thumbnail-caption {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            text-align: center;
+            font-size: 14px;
+            color: #ffcc00;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .unique-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+        }
+
+        .unique-overlay video {
+            width: 100%;
+            max-width: 80%;
+        }
+
+        .unique-overlay .unique-close-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="unique-video-section">
+        <div id="unique-main-video-container" class="unique-main-video-container">
+            <video id="unique-main-video" controls poster="/video/F1.png"></video>
+            <div class="unique-overlay-black"></div>
+            <div class="unique-play-icon" id="unique-play-icon">&#9658;</div>
+            <div class="unique-heading">“Our Pipeline Got Completely Flooded Overnight”</div>
+            <div class="unique-paragraph">Wade Tink, Managing Director, Project Everest</div>
+        </div>
+        <div class="unique-thumbnail-container">
+            <div class="unique-thumbnail" onclick="uniqueLoadVideo('/video/F1.mp4', '/video/F1.png', 'Wade Tink', '“Our Pipeline Got Completely Flooded Overnight”')">
+                <img src="/video/F1.png" alt="Thumbnail 1">
+                <div class="unique-thumbnail-play-icon">&#9658;</div>
+                <div class="unique-thumbnail-caption">Wade Tink</div>
+            </div>
+            <div class="unique-thumbnail" onclick="uniqueLoadVideo('/video/F2.mp4', '/video/F2.png', 'Colin Battersby', '“Great Experience!”')">
+                <img src="/video/F2.png" alt="Thumbnail 2">
+                <div class="unique-thumbnail-play-icon">&#9658;</div>
+                <div class="unique-thumbnail-caption">Colin Battersby</div>
+            </div>
+            <div class="unique-thumbnail" onclick="uniqueLoadVideo('/video/F3.mp4', '/video/F3.png', 'Beth Hourigan', '“Highly Recommend!”')">
+                <img src="/video/F3.png" alt="Thumbnail 3">
+                <div class="unique-thumbnail-play-icon">&#9658;</div>
+                <div class="unique-thumbnail-caption">Beth Hourigan</div>
+            </div>
+            <div class="unique-thumbnail" onclick="uniqueLoadVideo('/video/F4.mp4', '/video/F4.png', 'Dylan Trickey', '“Amazing Results!”')">
+                <img src="/video/F4.png" alt="Thumbnail 4">
+                <div class="unique-thumbnail-play-icon">&#9658;</div>
+                <div class="unique-thumbnail-caption">Dylan Trickey</div>
+            </div>
+            <div class="unique-thumbnail" onclick="uniqueLoadVideo('/video/F5.mp4', '/video/F5.png', 'Lee Selkrig', '“Exceeded Expectations!”')">
+                <img src="/video/F5.png" alt="Thumbnail 5">
+                <div class="unique-thumbnail-play-icon">&#9658;</div>
+                <div class="unique-thumbnail-caption">Lee Selkrig</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="unique-overlay" id="unique-overlay">
+        <span class="unique-close-icon" id="unique-close-icon">&times;</span>
+        <video id="unique-overlay-video" controls></video>
+    </div>
+
+    <script>
+        function uniqueLoadVideo(videoSrc, posterSrc, name, heading) {
+            const mainVideo = document.getElementById('unique-main-video');
+            const playIcon = document.getElementById('unique-play-icon');
+            const mainHeading = document.querySelector('.unique-heading');
+            const mainParagraph = document.querySelector('.unique-paragraph');
+            
+            mainVideo.src = videoSrc;
+            mainVideo.poster = posterSrc;
+            mainVideo.load();
+            playIcon.style.display = 'flex';
+            mainHeading.textContent = heading;
+            mainParagraph.textContent = name;
+        }
+
+        document.getElementById('unique-main-video-container').addEventListener('click', function() {
+            const overlay = document.getElementById('unique-overlay');
+            const overlayVideo = document.getElementById('unique-overlay-video');
+            const mainVideo = document.getElementById('unique-main-video');
+            
+            overlayVideo.src = mainVideo.src;
+            overlay.style.display = 'flex';
+            overlayVideo.play();
+        });
+
+        document.getElementById('unique-close-icon').addEventListener('click', function() {
+            const overlay = document.getElementById('unique-overlay');
+            const overlayVideo = document.getElementById('unique-overlay-video');
+            overlayVideo.pause();
+            overlay.style.display = 'none';
+        });
+
+        document.getElementById('unique-main-video').addEventListener('play', function() {
+            const playIcon = document.getElementById('unique-play-icon');
+            playIcon.style.display = 'none';
+        });
+
+        // Load the first video on page load
+        window.onload = function() {
+            uniqueLoadVideo('/video/F1.mp4', '/video/F1.png', 'Wade Tink', '“Our Pipeline Got Completely Flooded Overnight”');
+        };
+    </script>
+</body>
+</html>
